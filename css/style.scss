@@ -1,0 +1,103 @@
+// Style for Luissee.github.io by Jean_Louis aka Luis
+// 28/03/2014
+
+@font-face { font-family: 'OCR A Std'; src: url('/font/ocr_a_std.eot'); 
+  src: url('/font/ocr_a_std.eot?#iefix') format('embedded-opentype'), url('/font/ocr_a_std.svg#OCR A Std') format('svg'), url('/font/ocr_a_std.woff') format('woff'), url('/font/ocr_a_std.ttf') format('truetype'); 
+  font-weight: normal; 
+  font-style: normal;
+}
+
+body {
+  text-align: center;
+  font-family: 'OCR A Std' !important;
+  background-color: #fff;
+  line-height: 1.6;
+  background: url(../img/cream_pixels.png) repeat;
+}
+p {
+  font-size: 14px;
+
+}
+
+/* HEADER CONTENT
+-------------------------------------------------- */
+
+.header {
+  width: 100%;
+  color: #345;
+  background: #FBFF79;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  img {
+    border-radius: 100%;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+  }
+  h1 {font-size: 20px; margin-top: 1.2em;}
+  h3 {font-size: 16px; margin-top: 10px;}
+}
+
+/* CONTENT
+-------------------------------------------------- */
+/* Pad the edges of the mobile views a bit */
+.feature {
+  padding-top: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: #345;
+
+/* Center align the text within the three columns below the carousel */
+.col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+}
+
+.feature h2 {
+  font-weight: normal;
+}
+
+/* TWEETS
+-------------------------------------------------- */
+
+.tweets {
+  text-align: center;
+  ul {
+    list-style: none;
+    padding-left: 0px;
+  }
+}
+
+/* Footer 
+====================================================*/
+.footer {
+  padding-bottom: 50px;
+  .footer-icons {
+    text-align: center;
+    margin-top: 50px;
+    span {
+      margin: 0 15px;
+    }
+    .fa-stack-2x {
+      color: #000;
+    }
+    a {
+      color: #fff;
+    }
+    a:hover {
+      color: #FBFF79;
+    }
+  }
+  .footer-copyright {
+    margin-top: 30px;
+  }
+}
