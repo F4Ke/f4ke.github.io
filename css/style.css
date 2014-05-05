@@ -255,6 +255,8 @@
 		background-image: -ms-linear-gradient(top, rgba(97,184,219,0), rgba(48,141,196,1));
 		background-image: linear-gradient(top, rgba(97,184,219,0), rgba(48,141,196,1));
 		box-shadow: inset 0px 0px 0px 1px #135c86, inset 0px 2px 1px 0px rgba(255,255,255,0.75);
+					margin:0 0.35em 0 0.35em;
+
 		-moz-transition: background-color .2s ease-in-out;
 		-webkit-transition: background-color .2s ease-in-out;
 		-o-transition: background-color .2s ease-in-out;
@@ -864,6 +866,25 @@
 	{
 		background-image: url('images/bg.png');
 		box-shadow: inset 0px 1px 0px 0px rgba(0,0,0,0.05), inset 0px 2px 3px 0px rgba(0,0,0,0.1);
+	}
+
+	.wrapper-nobox
+	{
+		background-image: url('images/bg.png');
+		box-shadow: none;
+	}.
+
+	.wrapper-align-horriz
+	{
+	float: left;
+
+	}
+
+	.wrapper-contact
+	{
+
+		background-image: url('images/bg.png');
+
 	}
 
 	.wrapper-first

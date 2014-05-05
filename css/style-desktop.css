@@ -73,7 +73,7 @@
 
 		.button-big
 		{
-			margin:0 0.5em 0 0.5em;
+			margin:0 0.25em 0 0.25em;
 			font-size: 1.5em;
 			letter-spacing: -0.025em;
 		}
@@ -111,6 +111,12 @@
 		padding: 8em 0 8em 0;
 		text-align: center;
 	}
+
+	.wrapper-contact
+	{
+		text-align: center;
+	}
+
 
 		.wrapper-first
 		{
