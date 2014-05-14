@@ -504,19 +504,27 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
 
 /* simple pastel*/
 .pastelwork1 {
-    background-color: #ccf4f3;
+/*    background-color: #ccf4f3;
+*/
+    background-color: #ddf5f4;
 }
 
 .pastelwork2 {
-    background-color: #fdc096;
+/*    background-color: #ffd096;
+*/
+    background-color: #AFEAAf;
 }
 
 .pasteleduc1 {
-    background-color: #fdc096;
+/*    background-color: #ffc096;
+*/
+    background-color: #AFEAAf;
 }
 
 .pasteleduc2 {
-    background-color: #ccf4f3;
+/*    background-color: #ccf4f3;
+*/
+        background-color: #ddf5f4;
 }
 
 
@@ -529,6 +537,7 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
   -webkit-border-radius: 4px;
   border-radius: 4px;
   margin-bottom: 1em;
+  opacity: .9;
 }
 .meter > span {
   display: block;
@@ -564,7 +573,7 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
 .emerald > span {
 /*  background-color: #2ecc71;
 */
-  background-color: #3fdd82;
+  background-color: #5cb85c;
 }
 
 .carrot > span {
@@ -576,7 +585,7 @@ background-color: #F87F33;
 .wisteria > span{
 /*  background-color: #8e44ad;
 */
-  background-color: #BF55BE;
+  background-color: #5bc0de;
 }
 .sunflower > span{
 /*  background-color: #f1c40f;
