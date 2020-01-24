@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>Baha Documentation</title>
+    </head>
+    <body>
+
+        <!--Main menu-->
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="content col text-center">
+                        <div class="title">
+    						<i class="fas fa-file-alt"></i> Documentation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Main menu-->
+
+        <!--Documentation Start-->
+        <div class="documentation container">
+            <div class="row">
+                <div class="col-md-3 d-md-block d-none">
+                    <nav class="sidebar">
+                        <ul>
+                            <li><a class="active" href="#intro">Intro</a></li>
+                            <li><a href="#project">Project Structure</a></li>
+                            <li><a href="#html">HTML Structure</a></li>
+                            <li><a href="#css">CSS Structure</a></li>
+                            <li><a href="#js">JavaScript Structure</a></li>
+                            <li><a href="#fonts">Fonts</a></li>
+                            <li><a href="#source">Sources</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-9">
+                    <div class="content">
+
+                        <div id="intro" class="main">
+                            <h1>Baha</h1>
+                            <hr>
+							<p class="thanks">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form in themeforest.net. Thanks so much!</p>
+							<hr>
+                            <ul>
+                                <li>Author: <a href="https://themeforest.net/user/malyarchuk">Malyarchuk</a></li>
+								<li>Created: 20.06.2019</li>
+                            </ul>
+                            <hr>
+                        </div>
+
+                        <div id="project" class="main">
+                            <h2 id="projectstructure">Project Structure</h2>
+                            <p>Template has the following project structure:</p>
+                            <div class="file-tree">
+                                <ul>
+                                    <li><i class="far fa-folder" aria-hidden="true"></i>documentation</li>
+                                    <li><i class="far fa-folder-open" aria-hidden="true"></i>html
+                                        <ul>
+                                            <li><i class="far fa-folder" aria-hidden="true"></i>css</li>
+                                            <li><i class="far fa-folder" aria-hidden="true"></i>fonts</li>
+                                            <li><i class="far fa-folder" aria-hidden="true"></i>img</li>
+                                            <li><i class="far fa-folder" aria-hidden="true"></i>js</li>
+                                            <li><i class="far fa-file-code" aria-hidden="true"></i>index-*.html</li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i>single-blog.html</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="html" class="main">
+                            <h2 id="htmlstructure">HTML Structure</h2>
+                            <p>Html-files use <b>UTF-8</b> codepage. Use the editor with <b>UTF-8</b> support to avoid problems with unreadable symbols.</p>
+
+                            <h3>Head</h3>
+
+                            <p><b>&lt;title&gt;</b> tag: Is the title of your website</p>
+
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;title&gt;Website Name&lt;/title&gt; </code></pre>
+
+                            <p><b>&lt;link&gt;</b> tags: These tags contains Css Structure for appearance</p>
+
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;link rel="stylesheet" href="css/*.css" &gt; </code></pre>
+							<p><b>&lt;style.css&gt;</b> contains the basic structure of the site</p>
+
+							<br><hr>
+                            <h3>Body</h3>
+                            <p><b>&lt;body&gt;</b> tag contains the main website which users can view.</p>
+
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;body&gt;
+    &lt;!-- Website Sections Area --&gt;
+&lt;/body&gt;</code></pre>
+
+							<br><hr>
+                            <h3>Home Section</h3>
+							
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="pt-home" style="background-image: url('img/home-bg.jpg')"&gt;
+    &lt;!-- Section content --&gt;
+&lt;/div&gt;</code></pre>
+							
+							<p>To change the main picture of the site, upload your picture to the <b>img</b> folder and name 'home-bg.jpg'</p>
+							
+							<h4>Menu</h4>
+							
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;nav class="header-main"&gt;
+    &lt;div class="logo"&gt;
+        &lt;!-- Logo Image --&gt;
+    &lt;/div&gt;
+				
+    &lt;ul&gt;
+        &lt;!-- Navigation Menu --&gt;
+    &lt;/ul&gt;
+				
+    &lt;a class="music-bg"&gt;
+        &lt;!-- Music Line --&gt;
+    &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+							
+							<h4>Banner</h4>
+							
+<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="banner"&gt;
+    &lt;h1&gt;&lt;!-- Your Name --&gt;&lt;/h1&gt;			
+    &lt;p class="cd-headline rotate-1"&gt;
+        &lt;!-- Your information --&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+							
+							<h4>Social icons</h4>
+							
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="social"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fab fa-facebook-f"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;!-- Other Links --&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+							<br><hr>
+                            <h3>About Section</h3>
+                            <p>This section contains the introduction, personal information, video presentation, services, testimonials, price sections.</p><br>
+							<p class="alert alert-danger"><b>User Photo:</b> should of 400x400 resolution.</p>
+
+                            <h4>Interests</h4>
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="inter-icon"&gt;
+    &lt;i class="fas fa-route"&gt;&lt;/i&gt;
+    &lt;div class="desc-inter"&gt;
+        &lt;h6&gt;&lt;!-- You Interes --&gt;&lt;/h6&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+							
+							<h4>Services</h4>
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="service box"&gt;
+    &lt;i class="fas fa-*"&gt;&lt;/i&gt;
+    &lt;h4&gt;&lt;!-- Service title --&gt;&lt;/h4&gt;
+    &lt;p&gt;&lt;!-- Description --&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+
+
+							<h4>Testimonials Section</h4>
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="testimonial-item box"&gt;
+   &lt;div class="media"&gt;
+        &lt;img src="img/testimonials/testimonial-*.jpg" alt=""&gt;
+        &lt;div class="content"&gt;
+            &lt;h4&gt;&lt;!-- User Name --&gt;&lt;/h4&gt;
+            &lt;p&gt;&lt;!-- Profession --&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ul class="rating"&gt;
+        &lt;li&gt;&lt;i class="far fa-star"&gt;&lt;/i&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="comment"&gt;
+        &lt;p&gt;&lt;!-- Comment --&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+							
+							<p><b>Testimonial photo:</b> should of 80x80 resolution.</p>
+						
+							<h4>Price Section</h4>
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="price box"&gt;
+    &lt;div class="head-price"&gt;
+        &lt;i class="fa fa-*"&gt;&lt;/i&gt;
+        &lt;h4&gt;&lt;!-- Your Title --&gt;&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class="body-price"&gt;
+        &lt;div class="price-plan"&gt;
+            &lt;span class="number"&gt;&lt;!-- Your Price --&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="list-price"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;!-- Your Сondition --&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+							
+							<br><hr>
+							<h3>Resume Section</h3>
+							<p>This section contains the experience&amp;eduction, skills, work process.</p>
+
+							<h4>Experience &amp; Eduction</h4>
+
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="item"&gt;
+    &lt;div class="main"&gt;
+        &lt;h4&gt;&lt;!--Course or Position--&gt;&lt;/h4&gt;
+        &lt;p&gt;&lt;i class="far fa-calendar-alt"&gt;&lt;/i&gt;&lt;!-- Year from/till --&gt; | &lt;!-- School or Company Name --&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;!-- Description --&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+							
+							<h4>Skill Item</h4>
+
+							<p><b>Linear skills.</b></p>
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="skill-item"&gt;
+    &lt;h4 class="progress-title"&gt;&lt;!-- Name Skill --&gt;&lt;/h4&gt;
+    &lt;div class="progress"&gt;
+        &lt;div class="progress-bar" style="width:98%"&gt;&lt;!-- 'width' is the experience you gained --&gt;
+            &lt;div class="progress-value"&gt;98%&lt;/div&gt;&lt;!-- Should edit it the same as above attribute 'width' --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+							
+							<p><b>Round skills.</b></p>
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="chart" data-percent="80"&gt; 80% &lt;p&gt;&lt;!-- Name Skill --&gt;&lt;/p&gt;&lt;/div&gt;</code></pre>
+							
+							<p><b>'data-percent'</b> is the experience you gained</p>
+							<p class="alert alert-danger"><b>Note:</b> Numbers must be identical.</p>
+						
+							<h4>Work Process Item</h4>
+
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;!-- Working Process Item --&gt;
+&lt;div class="single-wp width-sm process-*"&gt;
+    &lt;p class="wp-step"&gt;&lt;!-- Number Process-- &gt;&lt;/p&gt;
+    &lt;h4 class="wp-title"&gt;&lt;!-- Title Process-- &gt;&lt;/h4&gt;
+    &lt;p&gt;&lt;!-- Description Process-- &gt;&lt;/p&gt;
+&lt;/div&gt;
+							
+&lt;!-- Working Process Circle--&gt;
+&lt;div class="wp-circle"&gt;
+    &lt;h4&gt;&lt;!--Name Process--&gt;&lt;/h4&gt;
+    &lt;span class="dots top-l"&gt;&lt;/span&gt;&lt;!-- Dot in the upper left --&gt;
+    &lt;span class="dots bottom-l"&gt;&lt;/span&gt;&lt;!-- Dot in the lower left --&gt;
+    &lt;span class="dots top-r"&gt;&lt;/span&gt;&lt;!-- Dot in the upper right --&gt;
+    &lt;span class="dots bottom-r"&gt;&lt;/span&gt;&lt;!-- Dot in the lower right --&gt;
+&lt;/div&gt;</code></pre>
+
+							<br><hr>
+                            <h3>Portfolio Section</h3>
+                            <p>This section contains the portfolio's items.</p>
+
+							<p>Portfolio Section have two parts: </p>
+                            <ul>
+                                <li><b>Portfolio filters</b></li>
+                                <li><b>Portfolio item</b></li>
+							</ul>
+
+                            <h4>Portfolio Filters</h4>
+
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;ul&gt;
+    &lt;li class="active" data-filter="*"&gt;All&lt;/li&gt;
+    &lt;li data-filter=".brand"&gt;Brand&lt;/li&gt;
+    &lt;li data-filter=".design"&gt;Design&lt;/li&gt;
+    &lt;li data-filter=".graphic"&gt;Graphic&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                            <p>Portfolio filters are the list item when clicked it will show portfolios related to those category.<br>
+                            <b>data-filter</b> : attribute specify the category the portfolios belongs to. It can have any value but thing to notice is that the value starts with <b>".value"</b>.</p>
+
+
+                            <h4>Portfolio Item</h4>
+
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;figure&gt;
+    &lt;img alt="" src="img/portfolio/img-*.jpg"&gt;
+    &lt;figcaption&gt;
+        &lt;h3&gt;&lt;!-- Project Name --&gt;&lt;/h3&gt;
+        &lt;p&gt;&lt;!-- Category --&gt;&lt;/p&gt;&lt;i class="fas fa-*"&gt;&lt;/i&gt;
+        &lt;a class="image-link" href="img/portfolio/img-*.jpg"&gt;&lt;/a&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+                            <p>Portfolio item is contain inside <b>&lt;div&gt;</b> tag. It have class attribute which value are item and <b>brand</b>, <b>item</b> is used for styling the portfolio single item and <b>brand</b> is used to show which category the item belongs to in respect to the filter.<br><br>
+                            Portfolio item has inside anchor tag. This tag has <b>class</b> and <b>href</b> attribute. The <b>class</b> attribute specify
+                            that the link is of image type. There are <b>2</b> possible values:</p>
+
+                            <ul>
+                                <li><b>image-link</b> : This tells the scripts to show as image type and will show as popup when click.</li>
+                                <li><b>video-link</b> : This tells the scripts to show as video type and will show as popup when click.</li>
+                            </ul>
+
+							<br><hr>
+                            <h3>Blog Section</h3>
+
+                            <p>This section contains the blog items.</p>
+
+                            <pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="blog-item"&gt;
+    &lt;div class="thumbnail"&gt;
+        &lt;a href="single-blog.html"&gt;&lt;img alt="" src="img/blog/img-*.jpg"&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;h4&gt;&lt;a href="single-blog.html"&gt;&lt;!-- You Name --&gt;&lt;/a&gt;&lt;/h4&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;&lt;!-- Date --&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;&lt;!-- Category --&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+                            <p><b>Blog</b> item when click will open the link related to that blog item for example <b>single-blog.html</b> page.</p>
+
+							<br><hr>
+                            <h3>Contact Section</h3>
+
+                            <p>This section contains contact form, contact info, google map.</p>
+
+                            <p><b>Contact Form</b>: Form contains the form fields for the user to send message. Form is based on ajax when submit the form will run the <b>mail.php</b> file. If everything is valid the mail will be send to the person whose email is specified in <b>mail.php</b> file.</p>
+							<p class="alert alert-danger"><b>Note:</b> Edit this line in <b>mail.php</b></p>
+							
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">$to = "you-email@example.com"; &lt;!-- Change the email to your email id --&gt;</code></pre>
+							
+							<p><b>Google Map:</b> Enter the latitude and longitude of your location.</p>
+							
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div id="map" data-latitude="&lt;!-- Your Latitude-- &gt;" data-longitude="&lt;!-- Your Longitude --&gt;" data-zoom="14"&gt;&lt;/div&gt;</code></pre>
+							
+							<br><hr>
+                            <h3>Elements Css</h3>
+							
+							<p>This section contains preloader, tooltip, music.</p>
+							
+							<h4>YouTube Video</h4>
+							
+							<p>To change the background music, change the link to it:</p>
+							<p class="alert alert-danger"><b>Note:</b> In the file <b>main.js</b>, find the line and insert your link:</p>
+							
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">$('body').append('&lt;audio loop autoplay volume="0" id="audio-player"&gt;&lt;source src="&lt;!-- You Link --&gt;" type="audio/mpeg"&gt;&lt;/audio&gt;');</code></pre>
+							
+							<h4>Preloader</h4>
+							
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div id="preloader"&gt;
+    &lt;div class="loading-area"&gt;
+        &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="left-side"&gt;&lt;/div&gt;
+    &lt;div class="right-side"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+							<p>In the span lines, specify your letters.</p>
+							
+							<h4>Tooltip</h4>
+							
+							<p>To install the tooltip, paste this line where you want it to appear:</p>
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">data-tooltip="&lt;!-- Information --&gt;" data-position="&lt;!-- Position --&gt;"</code></pre>
+							
+							 <p>Set the position from which the prompt will pop up.<br>
+							    In order to set the position you need to 'data-position' specify:
+							    <ul>
+                                	<li><b>top</b>: the tooltip will pop to the up.</li>
+                                	<li><b>left</b>: the tooltip will pop to the left.</li>
+									<li><b>right</b>: the tooltip will pop to the right.</li>
+									<li><b>bottom</b>: the tooltip will pop to the bottom.</li>
+                            </ul>
+
+							<h4>YouTube Video</h4>
+							
+							<p>In order to insert your video from youtube, change the link to it:</p>
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div id="video-container"&gt;
+    &lt;div id="play-video" class="player" data-property="{videoURL: '&lt;!-- Your Link --&gt;' ...&gt;&lt;/div&gt;	
+&lt;/div&gt;
+</code></pre>
+							<h4>Html5 Video</h4>
+							
+							<p>To insert your video, upload your video to the <b>'video'</b> folder:</p>
+							<pre class="prettyprint code-text linenums"><code class="prettyprint">&lt;div class="html-video-container" data-vide-bg="video/&lt;!-- The name of your video --&gt;.mp4"&gt;&lt;/div&gt;
+</code></pre>
+							
+                        </div>
+
+                        <div id="css" class="main">
+							<hr><br>
+                            <h2>CSS Structure</h2>
+
+                            <div class="file-tree">
+                                <ul>
+                                    <li><i class="far fa-folder-open" aria-hidden="true"></i>css
+                                        <ul>
+											<li><i class="far fa-folder-open" aria-hidden="true"></i>plugins</li>
+                                            <li style="padding-left: 50px"><i class="far fa-file-code" aria-hidden="true"></i>bootstrap.css</li>
+                                            <li style="padding-left: 50px"><i class="far fa-file-code" aria-hidden="true"></i>font-awesome.css</li>
+											<li style="padding-left: 50px"><i class="far fa-file-code" aria-hidden="true"></i>jquery.animatedheadline.css</li>
+											<li style="padding-left: 50px"><i class="far fa-file-code" aria-hidden="true"></i>magnific-popup.css</li>
+											<li style="padding-left: 50px"><i class="far fa-file-code" aria-hidden="true"></i>owl.carousel.min.css</li>
+											<li style="padding-left: 50px"><i class="far fa-file-code" aria-hidden="true"></i>owl.theme.default.min.css</li>
+											<li style="padding-left: 50px"><i class="far fa-file-code" aria-hidden="true"></i>simplebar.css</li>
+											<li><i class="far fa-folder-open" aria-hidden="true"></i>setting</li>
+                                            <li style="padding-left: 50px"><i class="far fa-file-code" aria-hidden="true"></i>*-color.css</li>
+                                            <li style="padding-left: 50px"><i class="far fa-file-code" aria-hidden="true"></i>*-nav.css</li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i><b>style-dark.css</b></li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i><b>style-light.css</b></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div><br>
+                            <p> <b>style-dark.css</b>: This file is the main CSS file for this template and contains a <b>Dark</b> style.<br>
+								<b>style-light.css</b>: This file is the main CSS file for this template and contains a <b>Light</b> style.<br>
+							</p>
+							
+							<p> <b>(*-color.css)</b>: This files are for choosing highlighed color of you own choice. There are 6 color file in this template.<br><br>
+								<b>(*-nav.css)</b>: These files are intended to select a menu item. This template has 4 menu positions.<br><br>
+								All other <b>css</b> files are designed to maintain the basic functions of this template.<br>
+							</p>
+
+                            <p class="alert alert-danger"><b>Note:</b> Editing these files can cause unexpected behaviour to the template only edit these file if you know what you are doing.</p>
+
+                        </div>
+
+                        <div id="js" class="main">
+							<hr><br>
+                            <h2>Javascript Structure</h2>
+                            <div class="file-tree">
+                                <ul>
+                                    <li><i class="far fa-folder-open" aria-hidden="true"></i>js
+                                        <ul>
+                                            <li><i class="far fa-file-code" aria-hidden="true"></i>jquery.min.js</li>
+                                            <li><i class="far fa-file-code" aria-hidden="true"></i>bootstrap.min.js</li>
+                                            <li><i class="far fa-file-code" aria-hidden="true"></i>isotope.pkgd.min.js</li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i>jquery.magnific-popup.min.js</li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i>jquery.animatedheadline.min.js</li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i>owl.carousel.min.js</li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i>jquery.easypiechart.js</li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i>jquery.validation.js</li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i>simplebar.js</li>
+											<li><i class="far fa-file-code" aria-hidden="true"></i>tilt.js</li>
+                                            <li><i class="far fa-file-code" aria-hidden="true"></i><b>main.js</b></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div><br>
+                            <p>
+							<b>main.js</b>: This file is main javascript file for this template.<br>
+                            All other <b>js</b> files contains various js library used in this template.</p>
+                            <p class="alert alert-danger"><b>Note:</b> Editing these files can cause unexpected behaviour to the template only edit these file if you know what you are doing.</p>
+
+                        </div>
+
+                        <div id="fonts" class="main">
+							<hr><br>
+                            <h2>Fonts</h2>
+                            <ul>
+                                <li>Google fonts:
+                                    <ul>
+                                        <li>Poppins</li>
+                                    </ul>
+                                </li>
+                                <li>Icon fonts:
+                                    <ul>
+                                        <li>Font Awesome 5</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="source" class="main">
+							<hr><br>
+                            <h2>Sources and Credits</h2>
+
+                            <h3 id="cssandjavascriptslibraries">CSS and Javascripts Libraries</h3>
+
+                            <ul>
+                                <li><a href="https://jquery.com/">jQuery</a></li>
+                                <li><a href="https://getbootstrap.com/">Bootstrap 4</a></li>
+                                <li><a href="https://fontawesome.com/">FontAwesome 5</a></li>
+								<li><a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup</a></li>
+								<li><a href="https://isotope.metafizzy.co/">Isotope</a></li>
+								<li><a href="https://owlcarousel2.github.io/OwlCarousel2/">Owl Carousel 2</a></li>
+								<li><a href="http://grsmto.github.io/simplebar/">SimpleBar</a></li>
+                                <li><a href="https://codyhouse.co/demo/animated-headlines/">Animated Headlines</a></li>
+								<li><a href="https://gijsroge.github.io/tilt.js/">Tilt</a></li>
+								<li><a href="https://github.com/rendro/easy-pie-chart">Easy Pie Chart</a></li>
+                            </ul>
+
+							<br><hr>
+                            <h3 id="images">Images</h3>
+                            <p><b>Images are not included.</b> All images are replaced with the placeholder. Images used in this template can be find at:</p>
+
+                            <ul>
+                                <li><a href="https://www.pexels.com/">Pexels</a></li>
+                                <li><a href="https://www.unsplash.com/">Unsplash</a></li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <p class="alert alert-danger">Thank you again for purchasing this template. If you have additional questions, I will be happy to help you. For any questions, please refer to my page in ThemeForest</p>
+                    </div>
+                </div>
+            </div>
+		</div>
+        <!--Documentation End-->
+
+        <script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/prettify.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
