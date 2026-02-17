@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 0 var(--spacing-md);
+  padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .hero-canvas {
@@ -250,6 +250,11 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: var(--spacing-lg) var(--spacing-sm);
+    min-height: 100vh;
+  }
+
   .hero-title-wrapper {
     flex-direction: column;
     gap: var(--spacing-md);
@@ -262,19 +267,24 @@
 
   .hero-stats {
     gap: var(--spacing-sm);
+    flex-direction: column;
   }
 
   .stat {
     padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9rem;
   }
 
   .hero-cta {
     flex-direction: column;
     align-items: stretch;
+    gap: var(--spacing-sm);
   }
 
   .btn {
     justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
 

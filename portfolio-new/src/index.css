@@ -176,3 +176,28 @@ button {
     background-position: 0% 50%;
   }
 }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  :root {
+    --spacing-xl: 5rem;
+    --spacing-lg: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 3.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-md: 2rem;
+    --spacing-sm: 1rem;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}

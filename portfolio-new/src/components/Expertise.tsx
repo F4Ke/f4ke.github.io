@@ -162,8 +162,10 @@ const Expertise = () => {
               whileHover={{ scale: 1.03, y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="card-icon">{area.icon}</div>
-              <h3>{area.title}</h3>
+              <div className="card-header">
+                <div className="card-icon">{area.icon}</div>
+                <h3>{area.title}</h3>
+              </div>
               <p>{area.description}</p>
               <div className="tech-tags">
                 {area.tags.map((tag, tagIndex) => (

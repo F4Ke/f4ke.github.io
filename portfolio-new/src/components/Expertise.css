@@ -19,10 +19,10 @@
 .title-accent {
   display: inline-block;
   margin-right: 0.5rem;
-  font-size: clamp(2rem, 4vw, 3.2rem); /* 80% de la taille du titre principal */
+  font-size: inherit; /* Même taille que le titre */
   font-weight: 300;
-  color: var(--text-secondary);
-  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
 }
 
 .section-subtitle {
@@ -50,18 +50,24 @@
   box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
 }
 
-.card-icon {
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
   margin-bottom: var(--spacing-md);
+}
+
+.card-icon {
   color: var(--accent-primary);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  height: 48px;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .card-icon svg {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   stroke: var(--accent-primary);
   transition: all 0.3s ease;
 }
@@ -73,8 +79,9 @@
 
 .expertise-card h3 {
   font-size: 1.5rem;
-  margin-bottom: var(--spacing-sm);
+  margin: 0;
   color: var(--text-primary);
+  line-height: 1.2;
 }
 
 .expertise-card p {
