@@ -43,6 +43,12 @@
   padding: 0;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .nav-link {
   color: var(--text-primary);
   text-decoration: none;

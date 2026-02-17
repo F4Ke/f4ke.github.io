@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import './Expertise.css';
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import "./Expertise.css";
 
 const Expertise = () => {
   const [ref, inView] = useInView({
@@ -10,40 +10,113 @@ const Expertise = () => {
 
   const expertiseAreas = [
     {
-      icon: '👑',
-      title: 'Technical Leadership & Architecture',
-      description: 'Strategic CTO-level guidance for ambitious projects. I architect distributed systems, lead engineering teams, and drive technical strategy that aligns with business objectives.',
-      tags: ['System Design', 'Microservices', 'Team Leadership', 'Agile/Scrum', 'Code Review', 'Strategic Planning', 'Technical Mentoring'],
+      icon: "👑",
+      title: "Technical Leadership & Architecture",
+      description:
+        "Strategic CTO-level guidance for ambitious projects. I architect distributed systems, lead engineering teams, and drive technical strategy that aligns with business objectives.",
+      tags: [
+        "System Design",
+        "Microservices",
+        "Team Leadership",
+        "Agile/Scrum",
+        "Code Review",
+        "Strategic Planning",
+        "Technical Mentoring",
+      ],
     },
     {
-      icon: '⚡',
-      title: 'High-Performance Backend',
-      description: 'Building ultra-scalable APIs and microservices that handle millions of requests. Expert in performance optimization, database design, and distributed systems.',
-      tags: ['Ruby on Rails', 'Golang', 'Elixir/Phoenix', 'Node.js', 'Python', 'Rust', 'GraphQL', 'gRPC', 'REST APIs'],
+      icon: "🤖",
+      title: "AI & Machine Learning",
+      description:
+        "Building production-ready AI systems that deliver real business value. Expert in LLMs, computer vision, NLP, and ML pipelines from prototype to scale.",
+      tags: [
+        "LLMs (GPT, Claude)",
+        "Computer Vision",
+        "NLP",
+        "TensorFlow",
+        "PyTorch",
+        "ML Pipelines",
+        "AI Integration",
+        "Prompt Engineering",
+      ],
     },
     {
-      icon: '☁️',
-      title: 'Cloud & Infrastructure',
-      description: 'Architecting cloud-native applications with zero-downtime deployments. Expert in AWS, containerization, and infrastructure as code.',
-      tags: ['AWS (EC2, S3, RDS, Lambda, ECS/EKS)', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Firebase'],
+      icon: "⚡",
+      title: "High-Performance Backend",
+      description:
+        "Building ultra-scalable APIs and microservices that handle millions of requests. Expert in performance optimization, database design, and distributed systems.",
+      tags: [
+        "Ruby on Rails",
+        "Golang",
+        "Elixir/Phoenix",
+        "Node.js",
+        "Python",
+        "Rust",
+        "GraphQL",
+        "gRPC",
+        "REST APIs",
+      ],
     },
     {
-      icon: '🗄️',
-      title: 'Database & Data Engineering',
-      description: 'Designing high-performance database architectures that scale. Expert in SQL, NoSQL, caching strategies, and data optimization.',
-      tags: ['PostgreSQL', 'MongoDB', 'Elasticsearch', 'Redis', 'Timeseries', 'ORM (ActiveRecord, Prisma)', 'Query Optimization'],
+      icon: "☁️",
+      title: "Cloud & Infrastructure",
+      description:
+        "Architecting cloud-native applications with zero-downtime deployments. Expert in AWS, containerization, and infrastructure as code.",
+      tags: [
+        "AWS (EC2, S3, RDS, Lambda, ECS/EKS)",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "CI/CD",
+        "Firebase",
+      ],
     },
     {
-      icon: '🎨',
-      title: 'Frontend & Mobile',
-      description: 'Creating stunning, responsive user interfaces with modern frameworks. Full-stack expertise from backend to pixel-perfect UIs.',
-      tags: ['React', 'TypeScript', 'Next.js', 'Redux', 'RxJS', 'Angular', 'React Native', 'Ionic', 'Swift', 'Java'],
+      icon: "🗄️",
+      title: "Database & Data Engineering",
+      description:
+        "Designing high-performance database architectures that scale. Expert in SQL, NoSQL, caching strategies, and data optimization.",
+      tags: [
+        "PostgreSQL",
+        "MongoDB",
+        "Elasticsearch",
+        "Redis",
+        "Timeseries",
+        "ORM (ActiveRecord, Prisma)",
+        "Query Optimization",
+      ],
     },
     {
-      icon: '🚀',
-      title: 'Performance & Optimization',
-      description: 'Transforming slow systems into lightning-fast applications. Expert in profiling, optimization, and scalability strategies.',
-      tags: ['Performance Tuning', 'Load Testing', 'Caching Strategies', 'Profiling', 'Scalability', 'High-Performance Computing'],
+      icon: "🎨",
+      title: "Frontend & Mobile",
+      description:
+        "Creating stunning, responsive user interfaces with modern frameworks. Full-stack expertise from backend to pixel-perfect UIs.",
+      tags: [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Redux",
+        "RxJS",
+        "Angular",
+        "React Native",
+        "Ionic",
+        "Swift",
+        "Java",
+      ],
+    },
+    {
+      icon: "🚀",
+      title: "Performance & Optimization",
+      description:
+        "Transforming slow systems into lightning-fast applications. Expert in profiling, optimization, and scalability strategies.",
+      tags: [
+        "Performance Tuning",
+        "Load Testing",
+        "Caching Strategies",
+        "Profiling",
+        "Scalability",
+        "High-Performance Computing",
+      ],
     },
   ];
 
@@ -78,10 +151,12 @@ const Expertise = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            <span className="title-accent gradient-text">Elite</span> Technical Expertise
+            <span className="title-accent gradient-text">Elite</span> Technical
+            Expertise
           </h2>
           <p className="section-subtitle">
-            The complete technology stack to transform your vision into a high-performance, scalable reality
+            The complete technology stack to transform your vision into a
+            high-performance, scalable reality
           </p>
         </motion.div>
 
@@ -89,7 +164,7 @@ const Expertise = () => {
           className="expertise-grid"
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          animate={inView ? "visible" : "hidden"}
         >
           {expertiseAreas.map((area, index) => (
             <motion.div
@@ -113,37 +188,29 @@ const Expertise = () => {
           ))}
         </motion.div>
 
-        <motion.div
-          className="tech-showcase"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
+        {/* Hidden tech showcase for SEO and LLM indexing */}
+        <div
+          className="tech-showcase-seo"
+          style={{ position: "absolute", left: "-9999px", opacity: 0 }}
+          aria-hidden="true"
         >
-          <h3 className="showcase-title">Technologies I Master</h3>
-          <div className="tech-cloud">
-            {[
-              'Ruby on Rails', 'Golang', 'Elixir', 'Phoenix', 'Rust', 'Python', 'TypeScript', 'JavaScript',
-              'React', 'Next.js', 'Node.js', 'GraphQL', 'gRPC', 'PostgreSQL', 'MongoDB', 'Redis',
-              'Elasticsearch', 'AWS', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Microservices',
-              'System Design', 'Performance Optimization', 'Team Leadership', 'Agile', 'TDD', 'DDD'
-            ].map((tech, index) => (
-              <motion.span
-                key={index}
-                className="tech-bubble"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.3, delay: 0.9 + index * 0.02 }}
-                whileHover={{ scale: 1.1, backgroundColor: 'rgba(102, 126, 234, 0.2)' }}
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
+          <h3>Technologies and Expertise</h3>
+          <p>
+            Expert in Ruby on Rails, Golang, Elixir, Phoenix, Rust, Python,
+            TypeScript, JavaScript, React, Next.js, Node.js, GraphQL, gRPC,
+            PostgreSQL, MongoDB, Redis, Elasticsearch, AWS, Docker, Kubernetes,
+            Terraform, CI/CD, Microservices, System Design, Performance
+            Optimization, Team Leadership, Agile, TDD, DDD, Software
+            Architecture, Distributed Systems, Cloud Infrastructure, DevOps,
+            Backend Development, Frontend Development, Full Stack Development,
+            Technical Leadership, CTO, Staff Engineer, Senior Engineer,
+            Scalability, High Availability, Database Design, API Design,
+            Security, Testing
+          </p>
+        </div>
       </div>
     </section>
   );
 };
 
 export default Expertise;
-

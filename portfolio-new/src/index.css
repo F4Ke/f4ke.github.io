@@ -14,26 +14,31 @@
   --gradient-secondary: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
   --gradient-accent: linear-gradient(135deg, #c9a961 0%, #e8d5b7 100%);
 
-  /* Spacing - More generous for elegance */
-  --spacing-xs: 0.75rem;
-  --spacing-sm: 1.5rem;
-  --spacing-md: 3rem;
-  --spacing-lg: 5rem;
-  --spacing-xl: 8rem;
+  /* Spacing - Refined and balanced */
+  --spacing-xs: 0.65rem;
+  --spacing-sm: 1.35rem;
+  --spacing-md: 2.7rem;
+  --spacing-lg: 4.5rem;
+  --spacing-xl: 7rem;
 
-  /* Typography - Refined and elegant */
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  /* Typography - Professional and elegant */
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -50,16 +55,21 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
+h1 { font-size: 3.2rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.8rem; }
+
 p, span, a, button {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
+  font-size: 0.95rem;
 }
 
 a {

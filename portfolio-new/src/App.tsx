@@ -7,23 +7,29 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Navigation from "./components/Navigation";
 import ParticlesBackground from "./components/ParticlesBackground";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 function App() {
+  useSmoothScroll();
+
   useEffect(() => {
     // Smooth scroll behavior
     document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
-    <div className="app">
-      <ParticlesBackground />
-      <Navigation />
-      <Hero />
-      <Expertise />
-      <Experience />
-      <Projects />
-      <Contact />
-    </div>
+    <LanguageProvider>
+      <div className="app">
+        <ParticlesBackground />
+        <Navigation />
+        <Hero />
+        <Expertise />
+        <Experience />
+        <Projects />
+        <Contact />
+      </div>
+    </LanguageProvider>
   );
 }
 

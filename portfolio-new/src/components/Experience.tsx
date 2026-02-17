@@ -11,83 +11,80 @@ const Experience = () => {
   const experiences = [
     {
       company: "REALITE.IO",
-      role: "Founder & Chief Technology Officer",
       period: "2025 - Present",
       description:
-        "Architecting an AI-powered financial intelligence platform from the ground up. Full ownership of technical strategy, infrastructure, and ML implementation.",
+        "Building the future of financial intelligence from the ground up. Zero to production in record time—architecting AI-powered market analysis platform processing millions of data points daily. Full technical ownership: infrastructure, ML pipelines, real-time analytics, and go-to-market strategy.",
       website: "https://www.realite.io/",
       highlights: [
-        "AI/ML",
-        "Financial Tech",
-        "System Architecture",
-        "Technical Leadership",
+        "AI/ML Production",
+        "Real-time Analytics",
+        "0→1 Product",
+        "Technical Strategy",
       ],
     },
     {
       company: "Sweep",
-      role: "Technical Consultant",
       period: "2025",
       description:
-        "Engaged to resolve critical performance bottlenecks and architect scalable data pipelines for Europe's leading sustainability platform.",
+        "Brought in as the technical expert to solve critical performance issues others couldn't crack. Eliminated bottlenecks causing 10x slowdowns, redesigned data architecture for 100x scale, delivered measurable ROI within weeks. Europe's top sustainability platform now handles enterprise load effortlessly.",
       website: "https://www.sweep.net/",
       highlights: [
-        "Performance Engineering",
+        "10x Performance Gain",
+        "100x Scale",
         "Data Architecture",
-        "Scale",
-        "Strategic Consulting",
+        "Rapid Impact",
       ],
     },
     {
       company: "Mooncard",
-      role: "Core Banking Architect",
       period: "2024",
       description:
-        "Brought in to design and implement mission-critical banking infrastructure handling thousands of concurrent transactions with zero tolerance for failure.",
+        "Engaged to architect the most critical infrastructure: core banking systems handling millions in daily transactions. Designed fault-tolerant architecture with zero downtime requirement. Every transaction matters—built systems that never fail.",
       website: "https://www.mooncard.co/",
       highlights: [
-        "Core Banking",
-        "High Availability",
+        "Zero Downtime",
         "Financial Systems",
-        "Golang",
+        "Fault Tolerance",
+        "Mission Critical",
       ],
     },
     {
       company: "Hivebrite",
-      role: "Technical Lead - Architecture Migration",
       period: "2021 - 2023",
       description:
-        "Spearheaded complete architectural transformation from monolith to microservices, achieving 90%+ performance improvement and enabling global scale.",
+        "Brought in to lead the complete reimagining of a legacy monolith serving millions globally. Architected and executed migration to modern microservices—90% faster response times, infinite scalability, zero business disruption. Mentored team through the transformation.",
       website: "https://www.hivebrite.io",
       highlights: [
+        "90% Faster",
+        "Zero Downtime Migration",
         "Microservices",
-        "Golang",
-        "gRPC",
-        "Architecture",
         "Team Leadership",
       ],
     },
     {
       company: "Station HQ",
-      role: "Senior Technical Consultant",
       period: "2020 - 2021",
       description:
-        "Delivered high-performance Web Extensions and GraphQL infrastructure, enabling seamless collaboration for thousands of enterprise users.",
+        "Called in to engineer high-performance browser extensions and GraphQL APIs powering collaboration for thousands of enterprise teams. Optimized for speed and reliability—users don't wait, systems don't break.",
       website: "https://stationhq.com/",
-      highlights: ["Web Extensions", "GraphQL", "TypeScript", "Performance"],
+      highlights: [
+        "Browser Extensions",
+        "GraphQL",
+        "Enterprise Scale",
+        "Performance",
+      ],
     },
     {
       company: "Tilkee",
-      role: "Technical Pillar & Lead Architect",
       period: "2014 - 2020",
       description:
-        "Central technical authority for 6 years. Architected microservices infrastructure, led engineering team, and drove all major technical decisions.",
+        "Served as the technical foundation for 6 years. From early-stage startup to established SaaS—architected every major system, led engineering team, made every critical technical decision. Built microservices infrastructure on AWS that scaled the company from zero to thousands of customers.",
       website: "https://www.tilkee.com/en/",
       highlights: [
-        "Technical Leadership",
-        "Microservices",
-        "AWS",
-        "Ruby on Rails",
-        "Elixir/Phoenix",
+        "6 Years Leadership",
+        "0→Scale",
+        "AWS Infrastructure",
+        "Team Building",
       ],
     },
   ];
@@ -147,10 +144,7 @@ const Experience = () => {
               <div className="timeline-marker"></div>
               <div className="timeline-content glass">
                 <div className="timeline-header">
-                  <div>
-                    <h3 className="company-name">{exp.company}</h3>
-                    <p className="role gradient-text">{exp.role}</p>
-                  </div>
+                  <h3 className="company-name">{exp.company}</h3>
                   <span className="period">{exp.period}</span>
                 </div>
                 <p className="description">{exp.description}</p>
@@ -193,6 +187,8 @@ const Experience = () => {
           <div className="freelance-clients">
             <span>CAREE</span>
             <span>TocTocToque</span>
+            <span>Syliane</span>
+            <span>Delubac</span>
             <span>And Many More...</span>
           </div>
         </motion.div>

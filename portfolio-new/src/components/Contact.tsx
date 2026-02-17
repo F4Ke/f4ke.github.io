@@ -88,9 +88,9 @@ const Contact = () => {
             </div>
 
             <div className="info-card glass">
-              <div className="info-icon">📍</div>
+              <div className="info-icon">🌍</div>
               <h3>Location</h3>
-              <p>Lyon, France</p>
+              <p>Worldwide (Remote)</p>
             </div>
 
             <div className="info-card glass">

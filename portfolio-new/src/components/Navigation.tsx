@@ -1,31 +1,34 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import './Navigation.css';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import "./Navigation.css";
+import LanguageSelector from "./LanguageSelector";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#expertise', label: 'Expertise' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: "#home", label: t.nav.home },
+    { href: "#expertise", label: t.nav.expertise },
+    { href: "#experience", label: t.nav.experience },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#contact", label: t.nav.contact },
   ];
 
   return (
     <motion.nav
-      className={`nav ${isScrolled ? 'scrolled' : ''}`}
+      className={`nav ${isScrolled ? "scrolled" : ""}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -35,7 +38,7 @@ const Navigation = () => {
           <span className="logo-text gradient-text">MF</span>
         </a>
 
-        <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+        <ul className={`nav-menu ${isMobileMenuOpen ? "active" : ""}`}>
           {navItems.map((item, index) => (
             <motion.li
               key={item.href}
@@ -54,19 +57,21 @@ const Navigation = () => {
           ))}
         </ul>
 
-        <button
-          className={`nav-toggle ${isMobileMenuOpen ? 'active' : ''}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="nav-actions">
+          <LanguageSelector />
+          <button
+            className={`nav-toggle ${isMobileMenuOpen ? "active" : ""}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </motion.nav>
   );
 };
 
 export default Navigation;
-
