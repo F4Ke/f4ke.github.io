@@ -1,19 +1,28 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Expertise.css";
+import { useLanguage } from "../i18n/LanguageContext";
+import {
+  CrownIcon,
+  BrainIcon,
+  ServerIcon,
+  ChainIcon,
+  CloudIcon,
+  PaletteIcon,
+} from "./Icons";
 
 const Expertise = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+  const { t } = useLanguage();
 
   const expertiseAreas = [
     {
-      icon: "👑",
-      title: "Technical Leadership & Architecture",
-      description:
-        "Strategic CTO-level guidance for ambitious projects. I architect distributed systems, lead engineering teams, and drive technical strategy that aligns with business objectives.",
+      icon: <CrownIcon />,
+      title: t.expertise.areas.leadership.title,
+      description: t.expertise.areas.leadership.description,
       tags: [
         "System Design",
         "Microservices",
@@ -25,10 +34,9 @@ const Expertise = () => {
       ],
     },
     {
-      icon: "🤖",
-      title: "AI & Machine Learning",
-      description:
-        "Building production-ready AI systems that deliver real business value. Expert in LLMs, computer vision, NLP, and ML pipelines from prototype to scale.",
+      icon: <BrainIcon />,
+      title: t.expertise.areas.ai.title,
+      description: t.expertise.areas.ai.description,
       tags: [
         "LLMs (GPT, Claude)",
         "Computer Vision",
@@ -41,10 +49,9 @@ const Expertise = () => {
       ],
     },
     {
-      icon: "⚡",
-      title: "High-Performance Backend",
-      description:
-        "Building ultra-scalable APIs and microservices that handle millions of requests. Expert in performance optimization, database design, and distributed systems.",
+      icon: <ServerIcon />,
+      title: t.expertise.areas.backend.title,
+      description: t.expertise.areas.backend.description,
       tags: [
         "Ruby on Rails",
         "Golang",
@@ -58,10 +65,9 @@ const Expertise = () => {
       ],
     },
     {
-      icon: "☁️",
-      title: "Cloud & Infrastructure",
-      description:
-        "Architecting cloud-native applications with zero-downtime deployments. Expert in AWS, containerization, and infrastructure as code.",
+      icon: <CloudIcon />,
+      title: t.expertise.areas.cloud.title,
+      description: t.expertise.areas.cloud.description,
       tags: [
         "AWS (EC2, S3, RDS, Lambda, ECS/EKS)",
         "Docker",
@@ -72,25 +78,9 @@ const Expertise = () => {
       ],
     },
     {
-      icon: "🗄️",
-      title: "Database & Data Engineering",
-      description:
-        "Designing high-performance database architectures that scale. Expert in SQL, NoSQL, caching strategies, and data optimization.",
-      tags: [
-        "PostgreSQL",
-        "MongoDB",
-        "Elasticsearch",
-        "Redis",
-        "Timeseries",
-        "ORM (ActiveRecord, Prisma)",
-        "Query Optimization",
-      ],
-    },
-    {
-      icon: "🎨",
-      title: "Frontend & Mobile",
-      description:
-        "Creating stunning, responsive user interfaces with modern frameworks. Full-stack expertise from backend to pixel-perfect UIs.",
+      icon: <PaletteIcon />,
+      title: t.expertise.areas.frontend.title,
+      description: t.expertise.areas.frontend.description,
       tags: [
         "React",
         "TypeScript",
@@ -105,17 +95,18 @@ const Expertise = () => {
       ],
     },
     {
-      icon: "🚀",
-      title: "Performance & Optimization",
-      description:
-        "Transforming slow systems into lightning-fast applications. Expert in profiling, optimization, and scalability strategies.",
+      icon: <ChainIcon />,
+      title: t.expertise.areas.blockchain.title,
+      description: t.expertise.areas.blockchain.description,
       tags: [
-        "Performance Tuning",
-        "Load Testing",
-        "Caching Strategies",
-        "Profiling",
-        "Scalability",
-        "High-Performance Computing",
+        "Ethereum",
+        "Solidity",
+        "Web3.js",
+        "Smart Contracts",
+        "DeFi",
+        "NFTs",
+        "Hardhat",
+        "Truffle",
       ],
     },
   ];
@@ -151,13 +142,10 @@ const Expertise = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            <span className="title-accent gradient-text">Elite</span> Technical
-            Expertise
+            <span className="title-accent">{t.expertise.title}</span>{" "}
+            <span className="gradient-text">{t.expertise.titleHighlight}</span>
           </h2>
-          <p className="section-subtitle">
-            The complete technology stack to transform your vision into a
-            high-performance, scalable reality
-          </p>
+          <p className="section-subtitle">{t.expertise.subtitle}</p>
         </motion.div>
 
         <motion.div

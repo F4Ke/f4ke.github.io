@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Experience.css";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Experience = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+  const { t } = useLanguage();
 
   const experiences = [
     {
@@ -120,12 +122,10 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            <span className="gradient-text">Select</span> Engagements
+            <span className="gradient-text">{t.experience.title}</span>{" "}
+            {t.experience.titleHighlight}
           </h2>
-          <p className="section-subtitle">
-            Trusted by industry leaders to solve their most critical technical
-            challenges
-          </p>
+          <p className="section-subtitle">{t.experience.subtitle}</p>
         </motion.div>
 
         <motion.div
@@ -162,7 +162,7 @@ const Experience = () => {
                     rel="noopener noreferrer"
                     className="company-link"
                   >
-                    Visit Website →
+                    {t.experience.viewWebsite} →
                   </a>
                 )}
               </div>

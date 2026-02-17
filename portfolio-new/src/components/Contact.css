@@ -30,8 +30,24 @@
 }
 
 .info-icon {
-  font-size: 2.5rem;
   margin-bottom: var(--spacing-sm);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+}
+
+.info-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--accent-primary);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover .info-icon svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(201, 169, 97, 0.4));
 }
 
 .info-card h3 {

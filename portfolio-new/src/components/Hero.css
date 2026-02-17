@@ -26,6 +26,54 @@
 
 .hero-text {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-photo {
+  width: 132px; /* +10% de 120px */
+  height: 132px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 8px 30px rgba(201, 169, 97, 0.2);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.25) 0%, rgba(139, 115, 85, 0.2) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(35%) contrast(1.05) brightness(0.92) sepia(35%); /* Plus sepia */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-photo:hover img {
+  filter: grayscale(25%) contrast(1.1) brightness(0.95) sepia(30%);
+  transform: scale(1.03);
 }
 
 .hero-badge {
@@ -48,7 +96,7 @@
 }
 
 .hero-title {
-  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-size: clamp(2.8rem, 8vw, 5.6rem); /* -20% de la taille originale */
   font-weight: 500;
   margin-bottom: var(--spacing-sm);
   line-height: 1;
@@ -57,7 +105,7 @@
 }
 
 .hero-role {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.8rem, 4.5vw, 3rem); /* +20% pour plus de présence */
   font-weight: 400;
   margin-bottom: var(--spacing-md);
   line-height: 1.2;
@@ -202,19 +250,29 @@
 }
 
 @media (max-width: 768px) {
+  .hero-title-wrapper {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .hero-photo {
+    width: 100px;
+    height: 100px;
+  }
+
   .hero-stats {
     gap: var(--spacing-sm);
   }
-  
+
   .stat {
     padding: var(--spacing-sm) var(--spacing-md);
   }
-  
+
   .hero-cta {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .btn {
     justify-content: center;
   }

@@ -2,12 +2,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Contact.css";
+import { useLanguage } from "../i18n/LanguageContext";
+import { EmailIcon, GlobeIcon, LightningIcon } from "./Icons";
 
 const Contact = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+  const { t } = useLanguage();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -64,12 +67,10 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            <span className="gradient-text">Let's Build</span> Together
+            <span className="gradient-text">{t.contact.title}</span>{" "}
+            {t.contact.titleHighlight}
           </h2>
-          <p className="section-subtitle">
-            Ready to transform your vision into reality? Get in touch for a
-            consultation or quote.
-          </p>
+          <p className="section-subtitle">{t.contact.subtitle}</p>
         </motion.div>
 
         <div className="contact-content">
@@ -80,29 +81,29 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="info-card glass">
-              <div className="info-icon">📧</div>
-              <h3>Email</h3>
+              <div className="info-icon">
+                <EmailIcon />
+              </div>
+              <h3>{t.contact.info.email}</h3>
               <a href="mailto:matthieu.lc.forel@gmail.com">
                 matthieu.lc.forel@gmail.com
               </a>
             </div>
 
             <div className="info-card glass">
-              <div className="info-icon">🌍</div>
-              <h3>Location</h3>
-              <p>Worldwide (Remote)</p>
+              <div className="info-icon">
+                <GlobeIcon />
+              </div>
+              <h3>{t.contact.info.location}</h3>
+              <p>{t.contact.info.locationValue}</p>
             </div>
 
             <div className="info-card glass">
-              <div className="info-icon">📞</div>
-              <h3>Phone</h3>
-              <a href="tel:+33783272070">+33 7.83.27.20.70</a>
-            </div>
-
-            <div className="info-card glass">
-              <div className="info-icon">⚡</div>
-              <h3>Response Time</h3>
-              <p>Within 24 hours</p>
+              <div className="info-icon">
+                <LightningIcon />
+              </div>
+              <h3>{t.contact.info.availability}</h3>
+              <p>{t.contact.info.availabilityValue}</p>
             </div>
           </motion.div>
 

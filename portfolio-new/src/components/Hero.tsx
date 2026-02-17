@@ -1,9 +1,22 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import "./Hero.css";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
+
+  // Apple-like scroll effects
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -69,85 +82,86 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" ref={sectionRef}>
       <canvas ref={canvasRef} className="hero-canvas" />
 
-      <div className="hero-content">
+      <motion.div className="hero-content" style={{ opacity, scale, y }}>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0 }}
           className="hero-text"
         >
-          <motion.div
-            className="hero-badge"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <span className="badge-line"></span>
-            <span>Available for Select Engagements</span>
-          </motion.div>
+          <div className="hero-title-wrapper">
+            <motion.h1
+              className="hero-title"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+            >
+              {t.hero.title}
+            </motion.h1>
 
-          <motion.h1
-            className="hero-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Matthieu FOREL
-          </motion.h1>
+            <motion.div
+              className="hero-photo"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <img src="./photo.jpg" alt="Matthieu Forel" />
+            </motion.div>
+          </div>
 
           <motion.h2
             className="hero-role"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <span className="gradient-text">Chief Technology Officer</span>
+            <span className="gradient-text">{t.hero.role}</span>
           </motion.h2>
 
           <motion.p
             className="hero-subtitle"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
           >
-            Building exceptional systems. Delivering measurable results.
+            {t.hero.subtitle}
             <br />
-            Trusted by industry leaders for over a decade.
+            {t.hero.subtitle2}
           </motion.p>
 
           <motion.div
             className="hero-stats"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
           >
             <div className="stat">
               <div className="stat-number">10+</div>
-              <div className="stat-label">Years</div>
+              <div className="stat-label">{t.hero.stats.years}</div>
             </div>
             <div className="stat-divider"></div>
             <div className="stat">
               <div className="stat-number">50+</div>
-              <div className="stat-label">Technologies</div>
+              <div className="stat-label">{t.hero.stats.technologies}</div>
             </div>
             <div className="stat-divider"></div>
             <div className="stat">
               <div className="stat-number">100%</div>
-              <div className="stat-label">Commitment</div>
+              <div className="stat-label">{t.hero.stats.commitment}</div>
             </div>
           </motion.div>
 
           <motion.div
             className="hero-cta"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            transition={{ duration: 0.4, delay: 0.25 }}
           >
             <a href="#contact" className="btn btn-primary">
-              <span>Discuss Your Project</span>
+              <span>{t.hero.cta}</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M4 10h12m0 0l-6-6m6 6l-6 6"
@@ -158,18 +172,19 @@ const Hero = () => {
                 />
               </svg>
             </a>
-            <a href="#expertise" className="btn btn-secondary">
-              <span>View Expertise</span>
+            <a href="#experience" className="btn btn-secondary">
+              <span>{t.hero.ctaSecondary}</span>
             </a>
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
 
       <motion.div
         className="scroll-indicator"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
+        style={{ opacity }}
       >
         <div className="mouse">
           <div className="wheel"></div>

@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Projects.css";
+import { useLanguage } from "../i18n/LanguageContext";
+import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+  const { t } = useLanguage();
 
   const projects = [
     {
@@ -68,27 +71,6 @@ const Projects = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <section id="projects" className="projects" ref={ref}>
       <div className="container">
@@ -99,56 +81,17 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            <span className="gradient-text">Flagship</span> Projects
+            <span className="gradient-text">{t.projects.title}</span>{" "}
+            {t.projects.titleHighlight}
           </h2>
-          <p className="section-subtitle">
-            Transforming ambitious visions into production-ready, scalable
-            systems
-          </p>
+          <p className="section-subtitle">{t.projects.subtitle}</p>
         </motion.div>
 
-        <motion.div
-          className="projects-grid"
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
+        <div className="projects-grid">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="project-card glass"
-              variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div
-                className="project-gradient"
-                style={{ background: project.gradient }}
-              ></div>
-              <div className="project-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="project-tech">
-                  {project.tech.map((tech, techIndex) => (
-                    <span key={techIndex} className="tech-tag">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    View Project →
-                  </a>
-                )}
-              </div>
-            </motion.div>
+            <ProjectCard key={index} {...project} index={index} />
           ))}
-        </motion.div>
+        </div>
 
         <motion.div
           className="cta-section"

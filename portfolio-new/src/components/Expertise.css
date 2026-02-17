@@ -13,11 +13,16 @@
 .section-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: var(--spacing-md);
+  font-weight: 300; /* Plus léger pour élégance */
 }
 
 .title-accent {
   display: inline-block;
   margin-right: 0.5rem;
+  font-size: clamp(2rem, 4vw, 3.2rem); /* 80% de la taille du titre principal */
+  font-weight: 300;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
 }
 
 .section-subtitle {
@@ -46,8 +51,24 @@
 }
 
 .card-icon {
-  font-size: 3rem;
   margin-bottom: var(--spacing-md);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 48px;
+}
+
+.card-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--accent-primary);
+  transition: all 0.3s ease;
+}
+
+.expertise-card:hover .card-icon svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(201, 169, 97, 0.4));
 }
 
 .expertise-card h3 {
