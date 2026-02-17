@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://f4ke.github.io/sitemap.xml
+
