@@ -51,17 +51,7 @@
   flex-shrink: 0;
 }
 
-.hero-photo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(201, 169, 97, 0.25) 0%, rgba(139, 115, 85, 0.2) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
+/* Gradient doré supprimé pour photo naturelle */
 
 .hero-photo img {
   width: 100%;
