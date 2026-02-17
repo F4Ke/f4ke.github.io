@@ -1,0 +1,60 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Matthieu FOREL - CTO Freelance Lyon",
+  "description": "Services de CTO Freelance et Directeur Technique à Lyon. Expert en architecture cloud, AI/ML, microservices et leadership technique avec 11+ ans d'expérience.",
+  "url": "https://f4ke.github.io/",
+  "image": "https://f4ke.github.io/photo.jpg",
+  "telephone": "",
+  "email": "matthieu.lc.forel@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lyon",
+    "addressRegion": "Auvergne-Rhône-Alpes",
+    "postalCode": "69000",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "45.764043",
+    "longitude": "4.835659"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Lyon"
+    },
+    {
+      "@type": "Country",
+      "name": "France"
+    },
+    {
+      "@type": "Place",
+      "name": "Remote"
+    }
+  ],
+  "priceRange": "€€€",
+  "serviceType": [
+    "CTO Freelance",
+    "Directeur Technique",
+    "Conseil Technique",
+    "Architecture Cloud",
+    "Développement Freelance",
+    "Leadership Technique"
+  ],
+  "knowsAbout": [
+    "AI",
+    "Machine Learning",
+    "LLMs",
+    "Ruby on Rails",
+    "Golang",
+    "Elixir",
+    "AWS",
+    "Kubernetes",
+    "Microservices",
+    "PostgreSQL",
+    "React",
+    "TypeScript"
+  ]
+}
+
