@@ -1,10 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import "./Hero.css";
 import { useLanguage } from "../i18n/LanguageContext";
 
 const Hero = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const { t } = useLanguage();
 
@@ -18,73 +17,42 @@ const Hero = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+  const handleScrollTo = (targetId: string) => {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const offsetTop = targetElement.offsetTop - 80;
+      const startPosition = window.pageYOffset;
+      const distance = offsetTop - startPosition;
+      const duration = 250; // 250ms pour un scroll ultra-rapide
+      let start: number | null = null;
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+      const easeInOutCubic = (t: number): number => {
+        return t < 0.5
+          ? 4 * t * t * t
+          : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      };
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+      const animation = (currentTime: number) => {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const ease = easeInOutCubic(progress);
 
-    // Subtle gradient mesh animation
-    let time = 0;
+        window.scrollTo(0, startPosition + distance * ease);
 
-    const animate = () => {
-      time += 0.001;
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      };
 
-      // Create subtle gradient background
-      const gradient = ctx.createLinearGradient(
-        0,
-        0,
-        canvas.width,
-        canvas.height,
-      );
-      gradient.addColorStop(0, "#0d0d0d");
-      gradient.addColorStop(0.5 + Math.sin(time) * 0.1, "#1a1a1a");
-      gradient.addColorStop(1, "#0d0d0d");
+      requestAnimationFrame(animation);
+    }
+  };
 
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Draw subtle grid lines
-      ctx.strokeStyle = "rgba(201, 169, 97, 0.03)";
-      ctx.lineWidth = 1;
-
-      const gridSize = 100;
-      for (let x = 0; x < canvas.width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-
-      for (let y = 0; y < canvas.height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-      }
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  // Canvas supprimé - fond noir simple
 
   return (
     <section id="home" className="hero" ref={sectionRef}>
-      <canvas ref={canvasRef} className="hero-canvas" />
-
       <motion.div className="hero-content" style={{ opacity, scale, y }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -160,7 +128,14 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.25 }}
           >
-            <a href="#contact" className="btn btn-primary">
+            <a
+              href="#contact"
+              className="btn btn-primary"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollTo("contact");
+              }}
+            >
               <span>{t.hero.cta}</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -172,7 +147,14 @@ const Hero = () => {
                 />
               </svg>
             </a>
-            <a href="#experience" className="btn btn-secondary">
+            <a
+              href="#experience"
+              className="btn btn-secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollTo("experience");
+              }}
+            >
               <span>{t.hero.ctaSecondary}</span>
             </a>
           </motion.div>

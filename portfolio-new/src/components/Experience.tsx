@@ -97,20 +97,14 @@ const Experience = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <h3>Freelance & Consulting</h3>
-          <p>
-            Since 2018, I've collaborated with startups and businesses to
-            architect and develop high-quality MVPs, mobile applications, and
-            scalable APIs. Successfully delivered projects including medical
-            taxi platforms, community-driven food applications, bank onboarding
-            solutions, and various tailored software products.
-          </p>
+          <h3>{t.experience.freelance.title}</h3>
+          <p>{t.experience.freelance.description}</p>
           <div className="freelance-clients">
             <span>CAREE</span>
             <span>TocTocToque</span>
             <span>Syliane</span>
             <span>Delubac</span>
-            <span>And Many More...</span>
+            <span>{t.experience.freelance.andMore}</span>
           </div>
         </motion.div>
       </div>

@@ -18,6 +18,46 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const offsetTop = targetElement.offsetTop - 80;
+      const startPosition = window.pageYOffset;
+      const distance = offsetTop - startPosition;
+      const duration = 250; // 250ms pour un scroll ultra-rapide
+      let start: number | null = null;
+
+      const easeInOutCubic = (t: number): number => {
+        return t < 0.5
+          ? 4 * t * t * t
+          : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      };
+
+      const animation = (currentTime: number) => {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const ease = easeInOutCubic(progress);
+
+        window.scrollTo(0, startPosition + distance * ease);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      };
+
+      requestAnimationFrame(animation);
+    }
+  };
+
   const navItems = [
     { href: "#home", label: t.nav.home },
     { href: "#expertise", label: t.nav.expertise },
@@ -34,7 +74,11 @@ const Navigation = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="nav-container">
-        <a href="#home" className="nav-logo">
+        <a
+          href="#home"
+          className="nav-logo"
+          onClick={(e) => handleNavClick(e, "#home")}
+        >
           <span className="logo-text gradient-text">MF</span>
         </a>
 
@@ -49,7 +93,7 @@ const Navigation = () => {
               <a
                 href={item.href}
                 className="nav-link"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.label}
               </a>

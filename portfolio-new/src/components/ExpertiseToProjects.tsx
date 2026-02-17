@@ -57,7 +57,7 @@ const ExpertiseToProjects = () => {
 
         <motion.div className="transition-stats">
           {[
-            { value: "10+", label: language === "fr" ? "Années" : "Years" },
+            { value: "11+", label: language === "fr" ? "Années" : "Years" },
             {
               value: "50+",
               label: language === "fr" ? "Projets" : "Projects",

@@ -106,6 +106,11 @@ export const translations = {
       titleHighlight: "Missions",
       subtitle: "Freelance & Consulting",
       viewWebsite: "View Website",
+      freelance: {
+        title: "Freelance & Consulting",
+        description: "Since 2018, I've collaborated with startups and businesses to architect and develop high-quality MVPs, mobile applications, and scalable APIs. Successfully delivered projects including medical taxi platforms, community-driven food applications, bank onboarding solutions, and various tailored software products.",
+        andMore: "And Many More...",
+      },
       items: [
         {
           company: "REALITE.IO",
@@ -296,6 +301,11 @@ export const translations = {
       titleHighlight: "Sélectionnées",
       subtitle: "Freelance & Consulting",
       viewWebsite: "Voir le Site",
+      freelance: {
+        title: "Freelance & Consulting",
+        description: "Depuis 2018, je collabore avec des startups et entreprises pour architecturer et développer des MVPs de haute qualité, applications mobiles et APIs scalables. Projets livrés avec succès incluant des plateformes de taxis médicaux, applications alimentaires communautaires, solutions d'onboarding bancaire et divers produits logiciels sur mesure.",
+        andMore: "Et Bien Plus...",
+      },
       items: [
         {
           company: "REALITE.IO",

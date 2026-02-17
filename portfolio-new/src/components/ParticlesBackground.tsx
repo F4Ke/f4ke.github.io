@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import './ParticlesBackground.css';
+import { useEffect, useRef } from "react";
+import "./ParticlesBackground.css";
 
 const ParticlesBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -8,7 +8,7 @@ const ParticlesBackground = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const setCanvasSize = () => {
@@ -35,7 +35,7 @@ const ParticlesBackground = () => {
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.3,
         size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.3,
+        opacity: Math.random() * 0.4 + 0.5, // Augmenté de 0.3-0.8 à 0.5-0.9
       });
     }
 
@@ -72,7 +72,7 @@ const ParticlesBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            const opacity = (1 - distance / 120) * 0.2;
+            const opacity = (1 - distance / 120) * 0.35; // Augmenté de 0.2 à 0.35
             ctx.strokeStyle = `rgba(102, 126, 234, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
@@ -89,10 +89,10 @@ const ParticlesBackground = () => {
       setCanvasSize();
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationId);
     };
   }, []);
@@ -101,4 +101,3 @@ const ParticlesBackground = () => {
 };
 
 export default ParticlesBackground;
-
