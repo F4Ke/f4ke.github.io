@@ -249,42 +249,126 @@
   letter-spacing: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero {
-    padding: var(--spacing-lg) var(--spacing-sm);
-    min-height: 100vh;
+    padding: calc(80px + var(--spacing-sm)) var(--spacing-md) var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    margin-top: -40px;
   }
 
   .hero-title-wrapper {
-    flex-direction: column;
     gap: var(--spacing-md);
   }
 
   .hero-photo {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
   .hero-stats {
-    gap: var(--spacing-sm);
-    flex-direction: column;
+    gap: var(--spacing-md);
   }
 
   .stat {
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: calc(70px + var(--spacing-xs)) var(--spacing-sm) var(--spacing-xs);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    margin-top: -30px;
+    width: 100%;
+  }
+
+  .hero-title-wrapper {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .hero-photo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+    text-align: center;
+  }
+
+  .hero-role {
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+  }
+
+  .hero-stats {
+    gap: 0;
+    flex-direction: column;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .stat {
+    padding: var(--spacing-xs) 0;
+    font-size: 0.85rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-divider {
+    display: none;
   }
 
   .hero-cta {
     flex-direction: column;
     align-items: stretch;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
   }
 
   .btn {
     justify-content: center;
-    padding: 0.9rem 1.5rem;
-    font-size: 0.95rem;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .scroll-indicator {
+    bottom: 15px;
+    font-size: 0.75rem;
+  }
+
+  .scroll-indicator .mouse {
+    width: 20px;
+    height: 30px;
+  }
+
+  .scroll-indicator .wheel {
+    width: 2px;
+    height: 6px;
   }
 }
 

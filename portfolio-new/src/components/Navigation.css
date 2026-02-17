@@ -106,7 +106,26 @@
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+/* Media queries pour tablette iPad */
+@media (max-width: 1024px) {
+  .nav-logo {
+    font-size: 1.5rem;  /* Réduit la taille du logo sur iPad */
+  }
+
+  .nav-menu {
+    gap: 1.5rem;  /* Réduit l'espacement */
+  }
+
+  .nav-actions {
+    gap: 1rem;  /* Réduit l'espacement */
+  }
+}
+
 @media (max-width: 768px) {
+  .nav-logo {
+    font-size: 1.3rem;  /* Encore plus petit sur mobile */
+  }
+
   .nav-toggle {
     display: flex;
   }

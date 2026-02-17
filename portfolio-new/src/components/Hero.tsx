@@ -189,7 +189,7 @@ const Hero = () => {
         <div className="mouse">
           <div className="wheel"></div>
         </div>
-        <p>Scroll to discover</p>
+        <p>{t.hero.scroll}</p>
       </motion.div>
     </section>
   );

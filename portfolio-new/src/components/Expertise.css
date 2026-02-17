@@ -11,9 +11,10 @@
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
   margin-bottom: var(--spacing-md);
   font-weight: 300; /* Plus léger pour élégance */
+  line-height: 1.2;
 }
 
 .title-accent {
@@ -26,11 +27,12 @@
 }
 
 .section-subtitle {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
   color: var(--text-secondary);
-  max-width: 700px;
+  max-width: 650px;
   margin: 0 auto;
   line-height: 1.6;
+  font-weight: 300;
 }
 
 .expertise-grid {
@@ -41,7 +43,7 @@
 }
 
 .expertise-card {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -53,8 +55,8 @@
 .card-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .card-icon {
@@ -78,16 +80,18 @@
 }
 
 .expertise-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 0;
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.3;
+  font-weight: 400;
 }
 
 .expertise-card p {
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
 }
 
 .tech-tags {

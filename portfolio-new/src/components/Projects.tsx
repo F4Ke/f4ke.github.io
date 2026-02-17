@@ -99,13 +99,10 @@ const Projects = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <h3>Ready to Build Something Extraordinary?</h3>
-          <p>
-            Let's transform your vision into a high-performance, scalable
-            reality
-          </p>
+          <h3>{t.projects.cta.title}</h3>
+          <p>{t.projects.cta.subtitle}</p>
           <a href="#contact" className="btn btn-primary btn-large">
-            <span>Start Your Project</span>
+            <span>{t.projects.cta.button}</span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path
                 d="M4 10h12m0 0l-6-6m6 6l-6 6"

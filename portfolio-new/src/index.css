@@ -15,11 +15,11 @@
   --gradient-accent: linear-gradient(135deg, #c9a961 0%, #e8d5b7 100%);
 
   /* Spacing - Refined and balanced */
-  --spacing-xs: 0.65rem;
-  --spacing-sm: 1.35rem;
-  --spacing-md: 2.7rem;
-  --spacing-lg: 4.5rem;
-  --spacing-xl: 7rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3.5rem;
+  --spacing-xl: 5rem;
 
   /* Typography - Professional and elegant */
   font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -96,6 +96,8 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-size: inherit; /* Même taille que le titre parent */
+  font-weight: inherit;
 }
 
 .glass {
@@ -180,17 +182,17 @@ button {
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   :root {
-    --spacing-xl: 5rem;
-    --spacing-lg: 3.5rem;
+    --spacing-xl: 3rem;  /* Réduit de 4rem à 3rem pour iPad */
+    --spacing-lg: 2rem;  /* Réduit de 3rem à 2rem */
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --spacing-xl: 3.5rem;
-    --spacing-lg: 2.5rem;
-    --spacing-md: 2rem;
-    --spacing-sm: 1rem;
+    --spacing-xl: 2rem;  /* Réduit de 3rem à 2rem pour mobile */
+    --spacing-lg: 1.5rem;  /* Réduit de 2rem à 1.5rem */
+    --spacing-md: 1.25rem;  /* Réduit de 1.5rem à 1.25rem */
+    --spacing-sm: 0.75rem;
   }
 
   body {

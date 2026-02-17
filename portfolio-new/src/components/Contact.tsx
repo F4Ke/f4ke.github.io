@@ -40,21 +40,49 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setSubmitStatus("success");
-      setIsSubmitting(false);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        serviceType: "consultation",
-        message: "",
-      });
+    try {
+      // Using FormSubmit.co - free form backend service
+      const response = await fetch(
+        "https://formsubmit.co/ajax/matthieu.lc.forel@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            serviceType: formData.serviceType,
+            message: formData.message,
+            _subject: `New Contact from Portfolio: ${formData.serviceType}`,
+            _template: "table",
+          }),
+        },
+      );
 
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          serviceType: "consultation",
+          message: "",
+        });
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      } else {
+        setSubmitStatus("error");
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 5000);
-    }, 1500);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -115,7 +143,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="form-group">
-              <label htmlFor="name">Name *</label>
+              <label htmlFor="name">{t.contact.form.name} *</label>
               <input
                 type="text"
                 id="name"
@@ -123,12 +151,12 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Your name"
+                placeholder={t.contact.form.namePlaceholder}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email *</label>
+              <label htmlFor="email">{t.contact.form.email} *</label>
               <input
                 type="email"
                 id="email"
@@ -136,24 +164,26 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="your.email@company.com"
+                placeholder={t.contact.form.emailPlaceholder}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="company">Company</label>
+              <label htmlFor="company">{t.contact.form.company}</label>
               <input
                 type="text"
                 id="company"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                placeholder="Your company name"
+                placeholder={t.contact.form.companyPlaceholder}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="serviceType">Service Type *</label>
+              <label htmlFor="serviceType">
+                {t.contact.form.serviceType} *
+              </label>
               <select
                 id="serviceType"
                 name="serviceType"
@@ -162,18 +192,22 @@ const Contact = () => {
                 required
               >
                 <option value="consultation">
-                  Consultation / Discovery Call
+                  {t.contact.form.services.consultation}
                 </option>
-                <option value="quote">Project Quote</option>
-                <option value="cto">CTO / Technical Leadership</option>
-                <option value="architecture">System Architecture Review</option>
-                <option value="development">Full-Stack Development</option>
-                <option value="other">Other</option>
+                <option value="quote">{t.contact.form.services.quote}</option>
+                <option value="cto">{t.contact.form.services.cto}</option>
+                <option value="architecture">
+                  {t.contact.form.services.architecture}
+                </option>
+                <option value="development">
+                  {t.contact.form.services.development}
+                </option>
+                <option value="other">{t.contact.form.services.other}</option>
               </select>
             </div>
 
             <div className="form-group">
-              <label htmlFor="message">Message *</label>
+              <label htmlFor="message">{t.contact.form.message} *</label>
               <textarea
                 id="message"
                 name="message"
@@ -181,7 +215,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={6}
-                placeholder="Tell me about your project, challenges, or goals..."
+                placeholder={t.contact.form.messagePlaceholder}
               />
             </div>
 
@@ -191,10 +225,10 @@ const Contact = () => {
               disabled={isSubmitting}
             >
               {isSubmitting ? (
-                <span>Sending...</span>
+                <span>{t.contact.form.sending}</span>
               ) : (
                 <>
-                  <span>Send Message</span>
+                  <span>{t.contact.form.send}</span>
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path
                       d="M4 10h12m0 0l-6-6m6 6l-6 6"
@@ -214,8 +248,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                ✓ Message sent successfully! I'll get back to you within 24
-                hours.
+                ✓ {t.contact.form.success}
               </motion.div>
             )}
 
@@ -225,7 +258,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                ✗ Something went wrong. Please try again or email me directly.
+                ✗ {t.contact.form.error}
               </motion.div>
             )}
           </motion.form>
