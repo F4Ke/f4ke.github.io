@@ -57,13 +57,13 @@ const ExpertiseToProjects = () => {
 
         <motion.div className="transition-stats">
           {[
-            { value: "11+", label: language === "fr" ? "Années" : "Years" },
+            { value: "12+", label: language === "fr" ? "Années" : "Years" },
             {
-              value: "50+",
+              value: "60+",
               label: language === "fr" ? "Projets" : "Projects",
             },
             {
-              value: "99.9%",
+              value: "99.99%",
               label: language === "fr" ? "Uptime" : "Uptime",
             },
           ].map((stat, index) => (

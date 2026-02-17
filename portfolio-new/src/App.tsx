@@ -6,6 +6,7 @@ import ExpertiseToProjects from "./components/ExpertiseToProjects";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import ParticlesBackground from "./components/ParticlesBackground";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
@@ -30,6 +31,7 @@ function App() {
         <Experience />
         <Projects />
         <Contact />
+        <Footer />
       </div>
     </LanguageProvider>
   );

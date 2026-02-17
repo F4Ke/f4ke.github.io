@@ -29,13 +29,27 @@ const ParticlesBackground = () => {
 
     // Create particles
     for (let i = 0; i < 80; i++) {
+      const direction = Math.random();
+      let vx, vy;
+
+      // 50% des particules vont horizontalement, 50% verticalement
+      if (direction < 0.5) {
+        // Mouvement horizontal
+        vx = (Math.random() - 0.5) * 0.6;
+        vy = (Math.random() - 0.5) * 0.1; // Très peu de mouvement vertical
+      } else {
+        // Mouvement vertical - vitesse augmentée
+        vx = (Math.random() - 0.5) * 0.1; // Très peu de mouvement horizontal
+        vy = (Math.random() < 0.5 ? 1 : -1) * (Math.random() * 0.3 + 0.3); // Vitesse verticale plus visible: 0.3-0.6
+      }
+
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.4 + 0.5, // Augmenté de 0.3-0.8 à 0.5-0.9
+        vx,
+        vy,
+        size: Math.random() * 2.2 + 0.4, // Range: 0.40-2.60 px
+        opacity: Math.random() * 0.5 + 0.6, // 0.6-1.1 (capped à 1)
       });
     }
 
@@ -72,7 +86,7 @@ const ParticlesBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            const opacity = (1 - distance / 120) * 0.35; // Augmenté de 0.2 à 0.35
+            const opacity = (1 - distance / 120) * 0.45; // Augmenté de 0.35 à 0.45
             ctx.strokeStyle = `rgba(102, 126, 234, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();

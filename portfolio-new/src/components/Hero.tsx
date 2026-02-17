@@ -87,7 +87,7 @@ const Hero = () => {
             transition={{ duration: 0.4, delay: 0.2 }}
           >
             <div className="stat">
-              <div className="stat-number">10+</div>
+              <div className="stat-number">12+</div>
               <div className="stat-label">{t.hero.stats.years}</div>
             </div>
             <div className="stat-divider"></div>
