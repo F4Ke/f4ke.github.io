@@ -53,12 +53,7 @@ export const translations = {
         },
       },
     },
-    experience: {
-      title: "Selected",
-      titleHighlight: "Engagements",
-      subtitle: "Trusted by industry leaders to solve their most critical technical challenges",
-      viewWebsite: "View Website",
-    },
+
     projects: {
       title: "Featured",
       titleHighlight: "Projects",
@@ -68,6 +63,93 @@ export const translations = {
         subtitle: "Let's transform your vision into a high-performance, scalable reality",
         button: "Start Your Project",
       },
+      items: [
+        {
+          title: "REALITE.IO",
+          description: "AI-powered stock market analysis and prediction platform with real-time analytics and machine learning models.",
+          tech: ["AI/ML", "Python", "Real-time Analytics", "Financial Tech"],
+        },
+        {
+          title: "Core Banking System",
+          description: "Robust banking infrastructure handling thousands of concurrent transactions with zero downtime and military-grade security.",
+          tech: ["Golang", "Ruby on Rails", "PostgreSQL", "gRPC"],
+        },
+        {
+          title: "REALITE NEWS",
+          description: "AI-powered video generation platform creating TikTok/Instagram content for financial and social news. Multi-voice, multi-language automation at scale.",
+          tech: ["AI/ML", "Video Generation", "TTS", "Multi-language", "Automation"],
+        },
+        {
+          title: "Microservices Migration",
+          description: "Led transformation from monolithic architecture to high-performance microservices, achieving 90%+ response time reduction.",
+          tech: ["Golang", "gRPC", "Docker", "Kubernetes", "Elasticsearch"],
+        },
+        {
+          title: "Sustainability Data Platform",
+          description: "Enterprise-scale data engineering platform for sustainability metrics, processing millions of data points daily.",
+          tech: ["Ruby on Rails", "PostgreSQL", "GraphQL", "AWS"],
+        },
+        {
+          title: "Document Intelligence Platform",
+          description: "Intelligent document sharing and analytics platform with real-time tracking and insights.",
+          tech: ["Ruby on Rails", "Angular", "AWS", "Microservices"],
+        },
+        {
+          title: "Community Platform",
+          description: "Highly customizable all-in-one community hub with advanced features and scalable architecture.",
+          tech: ["Ruby on Rails", "React", "PostgreSQL", "Redis"],
+        },
+      ],
+    },
+    experience: {
+      title: "Selected",
+      titleHighlight: "Missions",
+      subtitle: "Freelance & Consulting",
+      viewWebsite: "View Website",
+      items: [
+        {
+          company: "REALITE.IO",
+          period: "2025 - Present",
+          description: "Building the future of financial intelligence from the ground up. Zero to production in record time—architecting AI-powered market analysis platform processing millions of data points daily. Full technical ownership: infrastructure, ML pipelines, real-time analytics, and go-to-market strategy.",
+          website: "https://www.realite.io/",
+          highlights: ["AI/ML Production", "Real-time Analytics", "0→1 Product", "Technical Strategy"],
+        },
+        {
+          company: "Sweep",
+          period: "2025",
+          description: "Brought in as the technical expert to solve critical performance issues others couldn't crack. Eliminated bottlenecks causing 10x slowdowns, redesigned data architecture for 100x scale, delivered measurable ROI within weeks. Europe's top sustainability platform now handles enterprise load effortlessly.",
+          website: "https://www.sweep.net/",
+          highlights: ["10x Performance Gain", "100x Scale", "Data Architecture", "Rapid Impact"],
+        },
+        {
+          company: "Mooncard",
+          period: "2024",
+          description: "Engaged to architect the most critical infrastructure: core banking systems handling millions in daily transactions. Designed fault-tolerant architecture with zero downtime requirement. Every transaction matters—built systems that never fail.",
+          website: "https://www.mooncard.co/",
+          highlights: ["Zero Downtime", "Financial Systems", "Fault Tolerance", "Mission Critical"],
+        },
+        {
+          company: "Hivebrite",
+          period: "2021 - 2023",
+          description: "Brought in to lead the complete reimagining of a legacy monolith serving millions globally. Architected and executed migration to modern microservices—90% faster response times, infinite scalability, zero business disruption. Mentored team through the transformation.",
+          website: "https://www.hivebrite.io",
+          highlights: ["90% Faster", "Zero Downtime Migration", "Microservices", "Team Leadership"],
+        },
+        {
+          company: "Station HQ",
+          period: "2020 - 2021",
+          description: "Called in to engineer high-performance browser extensions and GraphQL APIs powering collaboration for thousands of enterprise teams. Optimized for speed and reliability—users don't wait, systems don't break.",
+          website: "https://stationhq.com/",
+          highlights: ["Browser Extensions", "GraphQL", "Enterprise Scale", "Performance"],
+        },
+        {
+          company: "Tilkee",
+          period: "2014 - 2020",
+          description: "Served as the technical foundation for 6 years. From early-stage startup to established SaaS—architected every major system, led engineering team, made every critical technical decision. Built microservices infrastructure on AWS that scaled the company from zero to thousands of customers.",
+          website: "https://www.tilkee.com/en/",
+          highlights: ["6 Years Leadership", "0→Scale", "AWS Infrastructure", "Team Building"],
+        },
+      ],
     },
     contact: {
       title: "Let's Build Something",
@@ -131,8 +213,8 @@ export const translations = {
       scroll: "Défiler pour découvrir",
     },
     expertise: {
-      title: "Expertise",
-      titleHighlight: "Principale",
+      title: "Principale",
+      titleHighlight: "Expertise",
       subtitle: "Leadership technique complet sur toute la stack",
       areas: {
         leadership: {
@@ -161,12 +243,7 @@ export const translations = {
         },
       },
     },
-    experience: {
-      title: "Missions",
-      titleHighlight: "Sélectionnées",
-      subtitle: "La confiance des leaders de l'industrie pour résoudre leurs défis techniques les plus critiques",
-      viewWebsite: "Voir le Site",
-    },
+
     projects: {
       title: "Projets",
       titleHighlight: "Phares",
@@ -176,6 +253,93 @@ export const translations = {
         subtitle: "Transformons votre vision en une réalité haute performance et scalable",
         button: "Démarrer Votre Projet",
       },
+      items: [
+        {
+          title: "REALITE.IO",
+          description: "Plateforme d'analyse et de prédiction boursière propulsée par l'IA avec analytics temps réel et modèles de machine learning.",
+          tech: ["IA/ML", "Python", "Analytics Temps Réel", "FinTech"],
+        },
+        {
+          title: "Système Bancaire Central",
+          description: "Infrastructure bancaire robuste gérant des milliers de transactions simultanées avec zéro downtime et sécurité de niveau militaire.",
+          tech: ["Golang", "Ruby on Rails", "PostgreSQL", "gRPC"],
+        },
+        {
+          title: "REALITE NEWS",
+          description: "Plateforme de génération vidéo IA créant du contenu TikTok/Instagram pour l'actualité financière et sociale. Automatisation multi-voix, multi-langue à grande échelle.",
+          tech: ["IA/ML", "Génération Vidéo", "TTS", "Multi-langue", "Automatisation"],
+        },
+        {
+          title: "Migration Microservices",
+          description: "Direction de la transformation d'une architecture monolithique vers des microservices haute performance, réduisant le temps de réponse de 90%+.",
+          tech: ["Golang", "gRPC", "Docker", "Kubernetes", "Elasticsearch"],
+        },
+        {
+          title: "Plateforme Data Durabilité",
+          description: "Plateforme d'ingénierie data à l'échelle entreprise pour les métriques de durabilité, traitant des millions de points de données quotidiennement.",
+          tech: ["Ruby on Rails", "PostgreSQL", "GraphQL", "AWS"],
+        },
+        {
+          title: "Plateforme Intelligence Documentaire",
+          description: "Plateforme intelligente de partage et d'analytics de documents avec tracking et insights temps réel.",
+          tech: ["Ruby on Rails", "Angular", "AWS", "Microservices"],
+        },
+        {
+          title: "Plateforme Communautaire",
+          description: "Hub communautaire tout-en-un hautement personnalisable avec fonctionnalités avancées et architecture scalable.",
+          tech: ["Ruby on Rails", "React", "PostgreSQL", "Redis"],
+        },
+      ],
+    },
+    experience: {
+      title: "Missions",
+      titleHighlight: "Sélectionnées",
+      subtitle: "Freelance & Consulting",
+      viewWebsite: "Voir le Site",
+      items: [
+        {
+          company: "REALITE.IO",
+          period: "2025 - Présent",
+          description: "Construire le futur de l'intelligence financière depuis zéro. De zéro à la production en temps record—architecture d'une plateforme d'analyse de marché propulsée par l'IA traitant des millions de points de données quotidiennement. Propriété technique complète : infrastructure, pipelines ML, analytics temps réel et stratégie go-to-market.",
+          website: "https://www.realite.io/",
+          highlights: ["Production IA/ML", "Analytics Temps Réel", "Produit 0→1", "Stratégie Technique"],
+        },
+        {
+          company: "Sweep",
+          period: "2025",
+          description: "Recruté en tant qu'expert technique pour résoudre des problèmes de performance critiques que d'autres n'ont pas pu résoudre. Élimination des goulots d'étranglement causant des ralentissements 10x, refonte de l'architecture data pour une échelle 100x, ROI mesurable en quelques semaines. La plateforme de durabilité leader en Europe gère désormais la charge entreprise sans effort.",
+          website: "https://www.sweep.net/",
+          highlights: ["Gain Performance 10x", "Échelle 100x", "Architecture Data", "Impact Rapide"],
+        },
+        {
+          company: "Mooncard",
+          period: "2024",
+          description: "Engagé pour architecturer l'infrastructure la plus critique : systèmes bancaires centraux gérant des millions de transactions quotidiennes. Conception d'une architecture tolérante aux pannes avec exigence de zéro downtime. Chaque transaction compte—construction de systèmes qui ne tombent jamais en panne.",
+          website: "https://www.mooncard.co/",
+          highlights: ["Zéro Downtime", "Systèmes Financiers", "Tolérance aux Pannes", "Mission Critique"],
+        },
+        {
+          company: "Hivebrite",
+          period: "2021 - 2023",
+          description: "Recruté pour diriger la refonte complète d'un monolithe legacy servant des millions d'utilisateurs mondialement. Architecture et exécution de la migration vers des microservices modernes—temps de réponse 90% plus rapides, scalabilité infinie, zéro perturbation business. Mentorat de l'équipe à travers la transformation.",
+          website: "https://www.hivebrite.io",
+          highlights: ["90% Plus Rapide", "Migration Zéro Downtime", "Microservices", "Leadership Équipe"],
+        },
+        {
+          company: "Station HQ",
+          period: "2020 - 2021",
+          description: "Appelé pour développer des extensions navigateur haute performance et des APIs GraphQL alimentant la collaboration pour des milliers d'équipes entreprise. Optimisé pour la vitesse et la fiabilité—les utilisateurs n'attendent pas, les systèmes ne cassent pas.",
+          website: "https://stationhq.com/",
+          highlights: ["Extensions Navigateur", "GraphQL", "Échelle Entreprise", "Performance"],
+        },
+        {
+          company: "Tilkee",
+          period: "2014 - 2020",
+          description: "Fondation technique pendant 6 ans. De startup early-stage à SaaS établi—architecture de chaque système majeur, direction de l'équipe engineering, prise de chaque décision technique critique. Construction d'une infrastructure microservices sur AWS qui a fait passer l'entreprise de zéro à des milliers de clients.",
+          website: "https://www.tilkee.com/en/",
+          highlights: ["Leadership 6 Ans", "0→Scale", "Infrastructure AWS", "Construction Équipe"],
+        },
+      ],
     },
     contact: {
       title: "Construisons Quelque Chose",

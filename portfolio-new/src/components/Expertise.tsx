@@ -142,7 +142,7 @@ const Expertise = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            <span className="title-accent">{t.expertise.title}</span>{" "}
+            {t.expertise.title}{" "}
             <span className="gradient-text">{t.expertise.titleHighlight}</span>
           </h2>
           <p className="section-subtitle">{t.expertise.subtitle}</p>

@@ -33,7 +33,7 @@ const ExpertiseToProjects = () => {
           >
             {language === "fr" ? (
               <>
-                De l'<span className="gradient-text">Expertise</span> à l'
+                D'<span className="gradient-text">Expertise</span> à{" "}
                 <span className="gradient-text">Exécution</span>
               </>
             ) : (
