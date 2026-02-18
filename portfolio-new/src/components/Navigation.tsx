@@ -42,6 +42,7 @@ const Navigation = () => {
   const navItems = [
     { href: "#home", label: t.nav.home },
     { href: "#expertise", label: t.nav.expertise },
+    { href: "#services", label: t.nav.services },
     { href: "#experience", label: t.nav.experience },
     { href: "#projects", label: t.nav.projects },
     { href: "#contact", label: t.nav.contact },

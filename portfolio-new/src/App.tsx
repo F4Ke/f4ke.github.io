@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import Expertise from "./components/Expertise";
+import Services from "./components/Services";
 import ExpertiseToProjects from "./components/ExpertiseToProjects";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
@@ -27,6 +28,7 @@ function App() {
         <Navigation />
         <Hero />
         <Expertise />
+        <Services />
         <ExpertiseToProjects />
         <Experience />
         <Projects />

@@ -1,25 +1,55 @@
+// Dynamic quarter calculation
+const getCurrentQuarter = () => {
+  const now = new Date();
+  const month = now.getMonth(); // 0-11
+  const year = now.getFullYear();
+  const quarter = Math.floor(month / 3) + 1; // 1-4
+
+  // Get next quarter
+  let nextQuarter = quarter + 1;
+  let nextYear = year;
+
+  if (nextQuarter > 4) {
+    nextQuarter = 1;
+    nextYear = year + 1;
+  }
+
+  return { quarter: nextQuarter, year: nextYear };
+};
+
+const { quarter, year } = getCurrentQuarter();
+
+// Service icons will be injected by the Services component
+export const serviceIcons = {
+  rocket: 'rocket',
+  robot: 'robot',
+  lightning: 'lightning',
+  suit: 'suit',
+} as const;
+
 export const translations = {
   en: {
     nav: {
       home: "Home",
       expertise: "Expertise",
+      services: "Services",
       experience: "Experience",
       projects: "Projects",
       contact: "Contact",
     },
     hero: {
-      badge: "Available for Strategic Engagements",
+      badge: "Available for New Projects • Fast Delivery • Production-Ready",
       title: "Matthieu FOREL",
       role: "Chief Technology Officer",
-      subtitle: "Building exceptional systems. Delivering measurable results.",
-      subtitle2: "Trusted by industry leaders for over a decade.",
+      subtitle: "Building exceptional digital products. From MVP to scaling.",
+      subtitle2: "AI, Web3, Cloud. Production-ready in weeks, not months. Trusted by 60+ companies.",
       stats: {
         years: "Years",
-        technologies: "Technologies",
-        commitment: "Commitment",
+        technologies: "Projects Delivered",
+        commitment: "Client Satisfaction",
       },
-      cta: "Discuss Your Project",
-      ctaSecondary: "View Experience",
+      cta: "Get Free Estimate",
+      ctaSecondary: "My Work",
       scroll: "Scroll to discover",
     },
     expertise: {
@@ -52,6 +82,94 @@ export const translations = {
           description: "Building decentralized applications and smart contracts. Deep expertise in Ethereum, Solidity, and the entire Web3 ecosystem.",
         },
       },
+    },
+
+    services: {
+      title: "",
+      titleHighlight: "Services",
+      subtitle: "High-performance solutions tailored to your ambitions",
+      popularBadge: "Recommended",
+      ctaButton: "Discuss Your Project",
+      packages: [
+        {
+          icon: "rocket" as const,
+          name: "MVP Development",
+          description: "Transform your vision into a production-ready product. Full-stack development from strategy to deployment.",
+          features: [
+            "Product strategy & UX design",
+            "Full-stack development (Frontend + Backend + DB)",
+            "Cloud deployment & infrastructure",
+            "Admin dashboard & analytics",
+            "Post-launch support & iterations",
+          ],
+          timeline: "6-8 weeks",
+          featured: true,
+        },
+        {
+          icon: "robot" as const,
+          name: "AI Integration",
+          description: "Leverage cutting-edge AI to create competitive advantages. LLMs, computer vision, NLP, or custom ML models.",
+          features: [
+            "AI strategy & feasibility study",
+            "Model selection & fine-tuning",
+            "Seamless API integration",
+            "Performance optimization",
+            "Continuous monitoring & improvements",
+          ],
+          timeline: "3-5 weeks",
+          featured: false,
+        },
+        {
+          icon: "lightning" as const,
+          name: "Technical Rescue",
+          description: "Resolve critical performance bottlenecks, modernize legacy systems, or migrate to scalable architecture.",
+          features: [
+            "In-depth technical audit",
+            "Performance optimization (10x improvements)",
+            "Architecture refactoring",
+            "Knowledge transfer & documentation",
+            "Long-term advisory support",
+          ],
+          timeline: "2-4 weeks",
+          featured: false,
+        },
+        {
+          icon: "suit" as const,
+          name: "CTO as a Service",
+          description: "Strategic technical leadership on-demand. Guide your team, make critical decisions, and scale with confidence.",
+          features: [
+            "Strategic planning sessions",
+            "Architecture & technology decisions",
+            "Team leadership & mentoring",
+            "Code reviews & best practices",
+            "Investor-ready technical documentation",
+          ],
+          timeline: "Flexible engagement",
+          featured: false,
+        },
+      ],
+      guarantees: [
+        {
+          icon: "✅",
+          title: "Excellence Guaranteed",
+          description: "Uncompromising quality standards. Every line of code matters.",
+        },
+        {
+          icon: "⚡",
+          title: "Rapid Execution",
+          description: "Production-ready solutions delivered in weeks, not months.",
+        },
+        {
+          icon: "🛡️",
+          title: "Enterprise-Grade",
+          description: "Clean architecture, best practices, comprehensive documentation.",
+        },
+        {
+          icon: "💬",
+          title: "Direct Partnership",
+          description: "Work directly with an experienced CTO. No intermediaries.",
+        },
+      ],
     },
 
     projects: {
@@ -159,7 +277,8 @@ export const translations = {
     contact: {
       title: "Let's Build Something",
       titleHighlight: "Exceptional",
-      subtitle: "Ready to transform your technical vision into reality? Let's discuss your project.",
+      subtitle: "Get your free project estimate in 24 hours. No commitment, just honest advice.",
+      urgency: `🔥 Limited slots available for Q${quarter} ${year}`,
       form: {
         name: "Name",
         namePlaceholder: "Your name",
@@ -198,23 +317,24 @@ export const translations = {
     nav: {
       home: "Accueil",
       expertise: "Expertise",
+      services: "Services",
       experience: "Expérience",
       projects: "Projets",
       contact: "Contact",
     },
     hero: {
-      badge: "Disponible pour des Missions Stratégiques",
+      badge: "Disponible pour Nouveaux Projets • Livraison Rapide • Production-Ready",
       title: "Matthieu FOREL",
       role: "Directeur Technique",
-      subtitle: "Construire des systèmes exceptionnels. Livrer des résultats mesurables.",
-      subtitle2: "La confiance des leaders de l'industrie depuis plus d'une décennie.",
+      subtitle: "Construction de produits digitaux exceptionnels. Du MVP au scaling.",
+      subtitle2: "IA, Web3, Cloud. Production-ready en semaines, pas en mois. La confiance de 60+ entreprises.",
       stats: {
         years: "Années",
-        technologies: "Technologies",
-        commitment: "Engagement",
+        technologies: "Projets Livrés",
+        commitment: "Satisfaction Client",
       },
-      cta: "Discutons de Votre Projet",
-      ctaSecondary: "Mon Expérience",
+      cta: "Devis Gratuit",
+      ctaSecondary: "Mes Réalisations",
       scroll: "Défiler pour découvrir",
     },
     expertise: {
@@ -247,6 +367,94 @@ export const translations = {
           description: "Construction d'applications décentralisées et smart contracts. Expertise approfondie en Ethereum, Solidity et tout l'écosystème Web3.",
         },
       },
+    },
+
+    services: {
+      title: "",
+      titleHighlight: "Services",
+      subtitle: "Solutions haute performance adaptées à vos ambitions",
+      popularBadge: "Recommandé",
+      ctaButton: "Discutons de Votre Projet",
+      packages: [
+        {
+          icon: "rocket" as const,
+          name: "Développement MVP",
+          description: "Transformez votre vision en produit production-ready. Développement full-stack de la stratégie au déploiement.",
+          features: [
+            "Stratégie produit & design UX",
+            "Développement full-stack (Frontend + Backend + DB)",
+            "Déploiement cloud & infrastructure",
+            "Dashboard admin & analytics",
+            "Support post-lancement & itérations",
+          ],
+          timeline: "6-8 semaines",
+          featured: true,
+        },
+        {
+          icon: "robot" as const,
+          name: "Intégration IA",
+          description: "Exploitez l'IA de pointe pour créer des avantages compétitifs. LLMs, computer vision, NLP ou modèles ML custom.",
+          features: [
+            "Stratégie IA & étude de faisabilité",
+            "Sélection & fine-tuning de modèles",
+            "Intégration API transparente",
+            "Optimisation de performance",
+            "Monitoring & améliorations continues",
+          ],
+          timeline: "3-5 semaines",
+          featured: false,
+        },
+        {
+          icon: "lightning" as const,
+          name: "Sauvetage Technique",
+          description: "Résolvez les goulots d'étranglement critiques, modernisez les systèmes legacy ou migrez vers une architecture scalable.",
+          features: [
+            "Audit technique approfondi",
+            "Optimisation performance (10x améliorations)",
+            "Refactoring d'architecture",
+            "Transfert de connaissances & documentation",
+            "Support conseil long terme",
+          ],
+          timeline: "2-4 semaines",
+          featured: false,
+        },
+        {
+          icon: "suit" as const,
+          name: "CTO as a Service",
+          description: "Leadership technique stratégique à la demande. Guidez votre équipe, prenez les bonnes décisions et scalez en confiance.",
+          features: [
+            "Sessions de planification stratégique",
+            "Décisions architecture & technologies",
+            "Leadership & mentorat d'équipe",
+            "Code reviews & best practices",
+            "Documentation technique pour investisseurs",
+          ],
+          timeline: "Engagement flexible",
+          featured: false,
+        },
+      ],
+      guarantees: [
+        {
+          icon: "✅",
+          title: "Excellence Garantie",
+          description: "Standards de qualité sans compromis. Chaque ligne de code compte.",
+        },
+        {
+          icon: "⚡",
+          title: "Exécution Rapide",
+          description: "Solutions production-ready livrées en semaines, pas en mois.",
+        },
+        {
+          icon: "🛡️",
+          title: "Niveau Entreprise",
+          description: "Architecture propre, best practices, documentation complète.",
+        },
+        {
+          icon: "💬",
+          title: "Partenariat Direct",
+          description: "Travaillez directement avec un CTO expérimenté. Sans intermédiaires.",
+        },
+      ],
     },
 
     projects: {
@@ -354,7 +562,8 @@ export const translations = {
     contact: {
       title: "Construisons Quelque Chose",
       titleHighlight: "d'Exceptionnel",
-      subtitle: "Prêt à transformer votre vision technique en réalité ? Discutons de votre projet.",
+      subtitle: "Recevez votre devis gratuit en 24 heures. Sans engagement, juste des conseils honnêtes.",
+      urgency: `🔥 Places limitées disponibles pour Q${quarter} ${year}`,
       form: {
         name: "Nom",
         namePlaceholder: "Votre nom",

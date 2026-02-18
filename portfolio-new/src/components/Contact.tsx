@@ -99,6 +99,7 @@ const Contact = () => {
             <span className="gradient-text">{t.contact.titleHighlight}</span>
           </h2>
           <p className="section-subtitle">{t.contact.subtitle}</p>
+          <p className="contact-urgency">{t.contact.urgency}</p>
         </motion.div>
 
         <div className="contact-content">
