@@ -8,9 +8,57 @@ const ParticlesBackground = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Détection de l'accélération matérielle
+    const detectHardwareAcceleration = (): boolean => {
+      try {
+        // Test avec WebGL - si disponible, l'accélération matérielle est probablement active
+        const testCanvas = document.createElement("canvas");
+        const gl =
+          testCanvas.getContext("webgl") ||
+          testCanvas.getContext("experimental-webgl");
+
+        if (!gl) return false;
+
+        // Vérifier si le renderer est software (pas de GPU)
+        const debugInfo = (gl as WebGLRenderingContext).getExtension(
+          "WEBGL_debug_renderer_info",
+        );
+        if (debugInfo) {
+          const renderer = (gl as WebGLRenderingContext).getParameter(
+            debugInfo.UNMASKED_RENDERER_WEBGL,
+          );
+          // Si le renderer contient "SwiftShader" ou "Software", c'est du software rendering
+          if (
+            renderer &&
+            (renderer.toLowerCase().includes("swiftshader") ||
+              renderer.toLowerCase().includes("software") ||
+              renderer.toLowerCase().includes("llvmpipe"))
+          ) {
+            return false;
+          }
+        }
+
+        return true;
+      } catch (e) {
+        // En cas d'erreur, on assume pas d'accélération
+        return false;
+      }
+    };
+
+    const hasHardwareAcceleration = detectHardwareAcceleration();
+
+    // Si pas d'accélération matérielle, on n'affiche pas les particules
+    if (!hasHardwareAcceleration) {
+      console.log(
+        "Hardware acceleration disabled - particles disabled for performance",
+      );
+      canvas.style.display = "none";
+      return;
+    }
+
     const ctx = canvas.getContext("2d", {
       alpha: true,
-      desynchronized: true, // Améliore les performances sans accélération matérielle
+      desynchronized: true,
     });
     if (!ctx) return;
 
