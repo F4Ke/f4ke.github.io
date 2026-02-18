@@ -19,14 +19,11 @@
   padding: 0;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
   transform-style: preserve-3d;
   will-change: transform;
 }
 
-.project-card:hover {
-  box-shadow: 0 30px 80px rgba(201, 169, 97, 0.3);
-}
+/* Hover supprimé - les animations sont suffisantes */
 
 .project-gradient {
   height: 8px;

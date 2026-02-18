@@ -59,7 +59,7 @@
 }
 
 .transition-text h2 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2rem, 4.5vw, 3.5rem); /* Uniformisé avec .section-title */
   font-weight: 300;
   margin-bottom: var(--spacing-md);
   line-height: 1.2;

@@ -95,8 +95,8 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">
-            <span className="gradient-text">{t.contact.title}</span>{" "}
-            {t.contact.titleHighlight}
+            {t.contact.title}{" "}
+            <span className="gradient-text">{t.contact.titleHighlight}</span>
           </h2>
           <p className="section-subtitle">{t.contact.subtitle}</p>
         </motion.div>

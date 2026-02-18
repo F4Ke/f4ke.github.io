@@ -27,8 +27,8 @@ const ParticlesBackground = () => {
       opacity: number;
     }> = [];
 
-    // Create particles
-    for (let i = 0; i < 80; i++) {
+    // Create particles - Réduit à 60 pour meilleures performances sur Windows/Chrome
+    for (let i = 0; i < 60; i++) {
       const direction = Math.random();
       let vx, vy;
 
@@ -75,18 +75,20 @@ const ParticlesBackground = () => {
         ctx.fill();
       });
 
-      // Connect nearby particles
+      // Connect nearby particles - Optimisé pour Windows/Chrome
       particles.forEach((particle, i) => {
         particles.slice(i + 1).forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+          const distanceSquared = dx * dx + dy * dy; // Évite Math.sqrt pour performance
+          const maxDistanceSquared = 120 * 120; // 14400
 
-          if (distance < 120) {
+          if (distanceSquared < maxDistanceSquared) {
+            const distance = Math.sqrt(distanceSquared); // Calcul seulement si nécessaire
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            const opacity = (1 - distance / 120) * 0.45; // Augmenté de 0.35 à 0.45
+            const opacity = (1 - distance / 120) * 0.45;
             ctx.strokeStyle = `rgba(102, 126, 234, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();

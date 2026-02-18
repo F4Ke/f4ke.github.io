@@ -80,10 +80,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 h1 { font-size: 3.2rem; }
@@ -91,10 +91,10 @@ h2 { font-size: 2.4rem; }
 h3 { font-size: 1.8rem; }
 
 p, span, a, button {
-  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-size: 0.95rem;
+  font-size: 1.05rem; /* Augmenté de 0.95rem à 1.05rem (+1pt environ) */
 }
 
 a {

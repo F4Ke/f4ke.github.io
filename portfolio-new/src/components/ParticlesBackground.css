@@ -6,5 +6,7 @@
   height: 100%;
   z-index: 0;
   pointer-events: none;
+  will-change: transform; /* Optimisation GPU pour Windows/Chrome */
+  transform: translateZ(0); /* Force GPU acceleration */
 }
 
