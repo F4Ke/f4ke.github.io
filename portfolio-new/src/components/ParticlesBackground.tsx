@@ -8,7 +8,10 @@ const ParticlesBackground = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", {
+      alpha: true,
+      desynchronized: true, // Améliore les performances sans accélération matérielle
+    });
     if (!ctx) return;
 
     const setCanvasSize = () => {
@@ -27,8 +30,8 @@ const ParticlesBackground = () => {
       opacity: number;
     }> = [];
 
-    // Create particles - Réduit à 60 pour meilleures performances sur Windows/Chrome
-    for (let i = 0; i < 60; i++) {
+    // Create particles - 55 particules avec optimisations FPS
+    for (let i = 0; i < 55; i++) {
       const direction = Math.random();
       let vx, vy;
 
@@ -54,8 +57,21 @@ const ParticlesBackground = () => {
     }
 
     let animationId: number;
+    let lastFrameTime = 0;
+    const targetFPS = 30; // Limite à 30 FPS pour économiser les ressources
+    const frameInterval = 1000 / targetFPS;
 
-    const animate = () => {
+    const animate = (currentTime: number) => {
+      const deltaTime = currentTime - lastFrameTime;
+
+      // Throttle animation to target FPS
+      if (deltaTime < frameInterval) {
+        animationId = requestAnimationFrame(animate);
+        return;
+      }
+
+      lastFrameTime = currentTime - (deltaTime % frameInterval);
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
@@ -75,20 +91,21 @@ const ParticlesBackground = () => {
         ctx.fill();
       });
 
-      // Connect nearby particles - Optimisé pour Windows/Chrome
+      // Connect nearby particles - Optimisé avec distance réduite
+      const maxDistanceSquared = 100 * 100; // Réduit de 120 à 100 pour moins de calculs
+
       particles.forEach((particle, i) => {
         particles.slice(i + 1).forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
-          const distanceSquared = dx * dx + dy * dy; // Évite Math.sqrt pour performance
-          const maxDistanceSquared = 120 * 120; // 14400
+          const distanceSquared = dx * dx + dy * dy;
 
           if (distanceSquared < maxDistanceSquared) {
-            const distance = Math.sqrt(distanceSquared); // Calcul seulement si nécessaire
+            const distance = Math.sqrt(distanceSquared);
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            const opacity = (1 - distance / 120) * 0.45;
+            const opacity = (1 - distance / 100) * 0.4;
             ctx.strokeStyle = `rgba(102, 126, 234, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
@@ -99,7 +116,7 @@ const ParticlesBackground = () => {
       animationId = requestAnimationFrame(animate);
     };
 
-    animate();
+    animationId = requestAnimationFrame(animate);
 
     const handleResize = () => {
       setCanvasSize();

@@ -1,0 +1,136 @@
+.services {
+  position: relative;
+  padding: var(--spacing-xl) 0;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  position: relative;
+  padding: var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 169, 97, 0.3);
+  box-shadow: 0 20px 60px rgba(201, 169, 97, 0.15);
+}
+
+.service-card.featured {
+  border: 2px solid var(--accent-primary);
+  background: rgba(201, 169, 97, 0.05);
+}
+
+.featured-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  padding: 0.4rem 1rem;
+  background: var(--gradient-primary);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 20px;
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: var(--spacing-md);
+  color: var(--accent-primary);
+}
+
+.service-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--accent-primary);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(201, 169, 97, 0.5));
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.service-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.service-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.service-features li svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--accent-primary);
+}
+
+
+
+.btn-service {
+  width: 100%;
+  justify-content: center;
+  background: rgba(201, 169, 97, 0.1);
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.btn-service:hover {
+  background: var(--accent-primary);
+  color: #000;
+}
+
+.service-card.featured .btn-service {
+  background: var(--accent-primary);
+  color: #000;
+}
+
+.service-card.featured .btn-service:hover {
+  background: var(--accent-tertiary);
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
