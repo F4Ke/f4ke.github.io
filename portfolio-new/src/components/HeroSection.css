@@ -235,7 +235,7 @@
   }
 
   .background-name {
-    gap: 0.8em; /* Réduit l'espace sur mobile */
+    gap: 1.5em; /* Espace visible entre MATTHIEU et FOREL sur mobile */
   }
 
   .background-name span {
