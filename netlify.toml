@@ -1,0 +1,26 @@
+[build]
+  base = "portfolio-new"
+  command = "npm run build:netlify"
+  publish = "portfolio-new/dist"
+  functions = "portfolio-new/netlify/functions"
+
+[dev]
+  command = "npm run dev"
+  targetPort = 5173
+  framework = "#custom"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Redirect API calls to functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
