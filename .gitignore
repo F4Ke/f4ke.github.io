@@ -1,1 +1,4 @@
 _site/
+
+# Local Netlify folder
+.netlify

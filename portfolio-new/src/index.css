@@ -1,33 +1,46 @@
 :root {
-  /* Elegant Professional Colors - Old Money Tech */
-  --bg-primary: #0d0d0d;
-  --bg-secondary: #1a1a1a;
-  --text-primary: #f5f5f0;
-  --text-secondary: #b8b8aa;
-  --text-muted: #8a8a7a;
-  --accent-primary: #c9a961;  /* Elegant gold */
-  --accent-secondary: #8b7355; /* Bronze */
-  --accent-tertiary: #e8d5b7;  /* Champagne */
+  /* Ultra-Modern Colors - Toukoum Style */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+  --accent-primary: #3b82f6;  /* Modern blue */
+  --accent-secondary: #8b5cf6; /* Purple */
+  --accent-tertiary: #06b6d4;  /* Cyan */
+  --accent-success: #10b981;   /* Green */
 
-  /* Gradients - Subtle and refined */
-  --gradient-primary: linear-gradient(135deg, #c9a961 0%, #8b7355 100%);
-  --gradient-secondary: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-  --gradient-accent: linear-gradient(135deg, #c9a961 0%, #e8d5b7 100%);
+  /* Gradients - Modern and vibrant */
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  --gradient-mesh: radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                   radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+                   radial-gradient(at 0% 50%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
 
-  /* Spacing - Refined and balanced */
+  /* Spacing - Precise and modern */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 3.5rem;
-  --spacing-xl: 5rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: 6rem;
 
-  /* Typography - Professional and elegant */
-  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography - Clean and modern */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+
+  /* Shadows - Subtle depth */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
 * {
@@ -94,7 +107,7 @@ p, span, a, button {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-size: 1.05rem; /* Augmenté de 0.95rem à 1.05rem (+1pt environ) */
+  font-size: 0.90rem; /* Augmenté de 0.95rem à 1.05rem (+1pt environ) */
 }
 
 a {
