@@ -76,6 +76,7 @@ export async function sendMessage(
         message,
         visitorId,
         conversationHistory: conversationHistory.slice(-10), // Last 10 messages
+        language, // Pass user's language preference
       }),
     });
 

@@ -216,7 +216,10 @@ B) **Question SPÉCIFIQUE** (détails sur UN élément) → Texte détaillé
 
 **2. TON & STYLE**
 • Confiant, expert, direct - "Big Boss" qui SAIT ce qu'il fait
-• Réponds dans la LANGUE de l'utilisateur (FR ou EN)
+• 🌍 **LANGUE : RÉPONDS TOUJOURS DANS LA LANGUE DE LA QUESTION !**
+  - Question en français → Réponse en français
+  - Question in English → Answer in English
+  - Ne mélange JAMAIS les langues !
 • Cite TOUJOURS des projets concrets avec CHIFFRES et IMPACT
 • Markdown : **gras** pour points clés, *italique* pour techno, \n\n entre paragraphes
 • 2-4 phrases percutantes, pas de blabla générique
@@ -383,7 +386,7 @@ const handler: Handler = async (event) => {
   }
 
   try {
-    const { message, visitorId, conversationHistory } = JSON.parse(event.body || "{}");
+    const { message, visitorId, conversationHistory, language } = JSON.parse(event.body || "{}");
 
     if (!message || !visitorId) {
       return { statusCode: 400, headers, body: JSON.stringify({ error: "Missing message or visitorId" }) };
@@ -399,13 +402,16 @@ const handler: Handler = async (event) => {
     }
 
     if (userLimit.count >= DAILY_LIMIT) {
+      const rateLimitMessage = language === "en"
+        ? "You've reached the daily question limit (7 max). Contact me directly to learn more! [SYSTEM:CONTACT]"
+        : "Tu as atteint la limite de questions pour aujourd'hui (7 max). Contacte-moi directement ! [SYSTEM:CONTACT]";
+
       return {
         statusCode: 429,
         headers,
         body: JSON.stringify({
           error: "rate_limit",
-          message: "Tu as atteint la limite de questions pour aujourd'hui (7 max). Contacte-moi directement !",
-          action: "CONTACT",
+          reply: rateLimitMessage,
           remaining: 0,
         }),
       };
@@ -424,8 +430,14 @@ const handler: Handler = async (event) => {
       throw new Error("OPENAI_API_KEY not configured");
     }
 
+    // Add language enforcement message
+    const languageInstruction = language === "en"
+      ? "CRITICAL: The user is speaking ENGLISH. You MUST respond in ENGLISH only. Do NOT use French."
+      : "CRITIQUE : L'utilisateur parle FRANÇAIS. Tu DOIS répondre en FRANÇAIS uniquement. N'utilise PAS l'anglais.";
+
     const messages: OpenAIMessage[] = [
       { role: "system", content: SYSTEM_PROMPT },
+      { role: "system", content: languageInstruction },
       ...(conversationHistory || []).slice(-10), // Keep last 10 for context
       { role: "user", content: message },
     ];
@@ -462,12 +474,26 @@ const handler: Handler = async (event) => {
     };
   } catch (error) {
     console.error("Chat error:", error);
+
+    // Try to get language from request body if available
+    let errorLanguage = "fr";
+    try {
+      const body = JSON.parse(event.body || "{}");
+      errorLanguage = body.language || "fr";
+    } catch {
+      // Ignore parse errors, use default
+    }
+
+    const errorMessage = errorLanguage === "en"
+      ? "You've reached the daily question limit (7 max). Contact me directly to learn more! [SYSTEM:CONTACT]"
+      : "Tu as atteint la limite de questions pour aujourd'hui (7 max). Contacte-moi directement pour en savoir plus ! [SYSTEM:CONTACT]";
+
     return {
       statusCode: 500,
       headers,
       body: JSON.stringify({
         error: "server_error",
-        reply: "Tu as atteint la limite de questions pour aujourd'hui (7 max). Contacte-moi directement pour en savoir plus ! [SYSTEM:CONTACT]"
+        reply: errorMessage
       }),
     };
   }

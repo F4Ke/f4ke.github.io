@@ -11,6 +11,28 @@ import {
 } from "./SystemComponents";
 import "./AIChatWidget.css";
 
+// Cookie utilities
+const COOKIE_MESSAGES_KEY = "ai_chat_messages";
+const COOKIE_REMAINING_KEY = "ai_chat_remaining";
+const COOKIE_EXPIRY_DAYS = 1; // 1 day
+
+const setCookie = (name: string, value: string, days: number) => {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+};
+
+const getCookie = (name: string): string | null => {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+};
+
 interface QuickAction {
   label: string;
   action: string;
@@ -81,23 +103,70 @@ const AIChatWidget = ({
 
   const intro = getIntroMessage();
 
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "intro",
-      text: `**${intro.title}**\n${intro.role}\n\n${intro.description}\n\n_${intro.askMe}_`,
-      sender: "ai",
-      timestamp: new Date(),
-      isIntro: true,
-    },
-  ]);
+  // Load messages from cookie or use intro message
+  const loadMessagesFromCookie = (): Message[] => {
+    const savedMessages = getCookie(COOKIE_MESSAGES_KEY);
+    if (savedMessages) {
+      try {
+        const parsed = JSON.parse(savedMessages);
+        // Convert timestamp strings back to Date objects
+        return parsed.map((msg: any) => ({
+          ...msg,
+          timestamp: new Date(msg.timestamp),
+        }));
+      } catch (e) {
+        console.error("Failed to parse saved messages:", e);
+      }
+    }
+    // Default intro message
+    return [
+      {
+        id: "intro",
+        text: `**${intro.title}**\n${intro.role}\n\n${intro.description}\n\n_${intro.askMe}_`,
+        sender: "ai",
+        timestamp: new Date(),
+        isIntro: true,
+      },
+    ];
+  };
+
+  // Load questions remaining from cookie
+  const loadQuestionsRemaining = (): number => {
+    const saved = getCookie(COOKIE_REMAINING_KEY);
+    return saved ? parseInt(saved, 10) : 7;
+  };
+
+  const [messages, setMessages] = useState<Message[]>(loadMessagesFromCookie());
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [conversationHistory, setConversationHistory] = useState<ChatMessage[]>(
     [],
   );
-  const [questionsRemaining, setQuestionsRemaining] = useState(7);
+  const [questionsRemaining, setQuestionsRemaining] = useState(
+    loadQuestionsRemaining(),
+  );
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Save messages to cookie whenever they change
+  useEffect(() => {
+    if (messages.length > 0) {
+      setCookie(
+        COOKIE_MESSAGES_KEY,
+        JSON.stringify(messages),
+        COOKIE_EXPIRY_DAYS,
+      );
+    }
+  }, [messages]);
+
+  // Save questions remaining to cookie whenever it changes
+  useEffect(() => {
+    setCookie(
+      COOKIE_REMAINING_KEY,
+      questionsRemaining.toString(),
+      COOKIE_EXPIRY_DAYS,
+    );
+  }, [questionsRemaining]);
 
   const scrollToBottom = () => {
     // Only scroll if there are more than 2 messages (user started conversation)
@@ -152,6 +221,8 @@ const AIChatWidget = ({
         sender: "ai",
         timestamp: new Date(),
         systemAction: response.systemAction,
+        // Show text with action if it's an error (rate limit, network error, etc.)
+        showTextWithAction: response.error ? true : undefined,
       };
 
       setMessages((prev) => [...prev, aiMessage]);

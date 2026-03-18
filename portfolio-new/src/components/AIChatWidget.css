@@ -73,7 +73,7 @@
   flex-direction: column;
   gap: 0.75rem;
   min-height: auto;
-  max-height: none;
+  max-height: 300px; /* Limit height in non-focused mode to avoid overlapping avatar */
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -359,6 +359,10 @@
     width: 85%;
   }
 
+  .chat-widget-messages {
+    max-height: 250px; /* Smaller on iPad in non-focused mode */
+  }
+
   .quick-actions-bar {
     padding: 0.875rem 1rem;
   }
@@ -380,6 +384,10 @@
   .chat-container.focused {
     top: 12%;
     bottom: 8%;
+  }
+
+  .chat-widget-messages {
+    max-height: 280px; /* Limit height on small laptops */
   }
 }
 
