@@ -13,12 +13,12 @@ export const AboutSection = ({
 
   const experiences = [
     {
-      company: "REALITE.IO",
+      company: "NORTHVANE",
       period: "2025 - Present",
       description:
         language === "fr"
-          ? "Construction de la plateforme d'intelligence financière de zéro. Traitement de millions de data points quotidiens avec des ML models. Ownership total : infra, ML pipelines, analytics temps réel, stratégie go-to-market."
-          : "Building financial intelligence platform from scratch. Processing millions of daily data points with ML models. Full ownership: infra, ML pipelines, real-time analytics, go-to-market strategy.",
+          ? "Stop Guessing. Start Winning. Signaux AI pour stocks, crypto & prediction markets. Sentiment tracking temps réel, prédictions de prix, alertes marché. Ownership total : infra, ML pipelines, analytics temps réel, stratégie go-to-market."
+          : "Stop Guessing. Start Winning. AI-powered signals for stocks, crypto & prediction markets. Real-time sentiment tracking, AI price predictions, market intelligence alerts. Full ownership: infra, ML pipelines, real-time analytics, go-to-market strategy.",
       highlights:
         language === "fr"
           ? [
@@ -208,11 +208,11 @@ export const ProjectsSection = ({
 
   const projects = [
     {
-      title: "REALITE.IO",
+      title: "NORTHVANE",
       description:
         language === "fr"
-          ? "Plateforme d'analyse boursière IA avec analytics temps réel et modèles de machine learning."
-          : "AI-powered stock market analysis platform with real-time analytics and machine learning models.",
+          ? "Signaux AI pour stocks, crypto & prediction markets. Sentiment tracking en temps réel et alertes d'intelligence de marché."
+          : "AI-powered signals for stocks, crypto & prediction markets. Real-time sentiment tracking and market intelligence alerts.",
       tech: ["AI/ML", "Python", "Real-time Analytics", "Financial Tech"],
     },
     {

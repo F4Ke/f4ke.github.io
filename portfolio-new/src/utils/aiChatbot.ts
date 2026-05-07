@@ -85,8 +85,8 @@ export const generateResponse = (input: string): ChatResponse => {
       en: "Hey! 👋 I'm Matthieu Forel, CTO & Tech Lead with 12+ years of experience. I build products that scale. How can I help you?"
     },
     experience: {
-      fr: "💼 J'ai dirigé des équipes tech chez REALITE.IO (AI/VR), Sweep (Performance), Mooncard (FinTech), et bien d'autres. De la startup au scale-up, j'ai tout vu. Quelle expérience t'intéresse ?",
-      en: "💼 I've led tech teams at REALITE.IO (AI/VR), Sweep (Performance), Mooncard (FinTech), and many more. From startup to scale-up, I've seen it all. Which experience interests you?"
+      fr: "💼 J'ai dirigé des équipes tech chez NORTHVANE (AI/FinTech), Sweep (Performance), Mooncard (FinTech), et bien d'autres. De la startup au scale-up, j'ai tout vu. Quelle expérience t'intéresse ?",
+      en: "💼 I've led tech teams at NORTHVANE (AI/FinTech), Sweep (Performance), Mooncard (FinTech), and many more. From startup to scale-up, I've seen it all. Which experience interests you?"
     },
     skills: {
       fr: "⚡ Full-stack expert : Backend (Node.js, Python, Go), Frontend (React, Vue, Next.js), Cloud (AWS, GCP, Kubernetes), AI/ML, Architecture... Je maîtrise toute la stack moderne. Quelle techno t'intéresse ?",
@@ -136,7 +136,7 @@ const getQuickActions = (intent: Intent, language: 'fr' | 'en'): QuickAction[] =
         { label: '🎮 Fun (WIP)', action: 'fun', icon: '🎮' }
       ],
       experience: [
-        { label: 'REALITE.IO (2021-2024)', action: 'experience' },
+        { label: 'NORTHVANE (2025-Present)', action: 'experience' },
         { label: 'Sweep (2020-2021)', action: 'experience' },
         { label: 'Mooncard (2014-2020)', action: 'experience' },
         { label: 'Toutes les expériences', action: 'experience' }
@@ -151,7 +151,7 @@ const getQuickActions = (intent: Intent, language: 'fr' | 'en'): QuickAction[] =
         { label: '🎮 Fun (WIP)', action: 'fun', icon: '🎮' }
       ],
       experience: [
-        { label: 'REALITE.IO (2021-2024)', action: 'experience' },
+        { label: 'NORTHVANE (2025-Present)', action: 'experience' },
         { label: 'Sweep (2020-2021)', action: 'experience' },
         { label: 'Mooncard (2014-2020)', action: 'experience' },
         { label: 'All experiences', action: 'experience' }

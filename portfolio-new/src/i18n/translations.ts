@@ -183,8 +183,8 @@ export const translations = {
       },
       items: [
         {
-          title: "REALITE.IO",
-          description: "AI-powered stock market analysis and prediction platform with real-time analytics and machine learning models.",
+          title: "NORTHVANE",
+          description: "AI-powered signals for stocks, crypto & prediction markets. Real-time sentiment tracking and market intelligence alerts.",
           tech: ["AI/ML", "Python", "Real-time Analytics", "Financial Tech"],
         },
         {
@@ -231,10 +231,10 @@ export const translations = {
       },
       items: [
         {
-          company: "REALITE.IO",
+          company: "NORTHVANE",
           period: "2025 - Present",
-          description: "Building the future of financial intelligence from the ground up. Zero to production in record time—architecting AI-powered market analysis platform processing millions of data points daily. Full technical ownership: infrastructure, ML pipelines, real-time analytics, and go-to-market strategy.",
-          website: "https://www.realite.io/",
+          description: "Stop Guessing. Start Winning. Building AI-powered signals for stocks, crypto & prediction markets. Real-time sentiment tracking, AI price predictions, and market intelligence alerts. Full technical ownership: infrastructure, ML pipelines, real-time analytics, and go-to-market strategy.",
+          website: "https://www.northvane.app/",
           highlights: ["AI/ML Production", "Real-time Analytics", "0→1 Product", "Technical Strategy"],
         },
         {
@@ -468,8 +468,8 @@ export const translations = {
       },
       items: [
         {
-          title: "REALITE.IO",
-          description: "Plateforme d'analyse et de prédiction boursière propulsée par l'IA avec analytics temps réel et modèles de machine learning.",
+          title: "NORTHVANE",
+          description: "Signaux AI pour stocks, crypto & prediction markets. Tracking de sentiment en temps réel et alertes d'intelligence de marché.",
           tech: ["IA/ML", "Python", "Analytics Temps Réel", "FinTech"],
         },
         {
@@ -516,10 +516,10 @@ export const translations = {
       },
       items: [
         {
-          company: "REALITE.IO",
+          company: "NORTHVANE",
           period: "2025 - Présent",
-          description: "Construire le futur de l'intelligence financière depuis zéro. De zéro à la production en temps record—architecture d'une plateforme d'analyse de marché propulsée par l'IA traitant des millions de points de données quotidiennement. Propriété technique complète : infrastructure, pipelines ML, analytics temps réel et stratégie go-to-market.",
-          website: "https://www.realite.io/",
+          description: "Stop Guessing. Start Winning. Signaux AI pour stocks, crypto & prediction markets. Tracking de sentiment en temps réel, prédictions de prix AI, et alertes d'intelligence de marché. Propriété technique complète : infrastructure, pipelines ML, analytics temps réel et stratégie go-to-market.",
+          website: "https://www.northvane.app/",
           highlights: ["Production IA/ML", "Analytics Temps Réel", "Produit 0→1", "Stratégie Technique"],
         },
         {

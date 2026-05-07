@@ -108,7 +108,7 @@ git push origin master
 
 - **Hero** - Introduction avec animations de particules 3D
 - **Expertise** - Compétences techniques (Backend, Cloud, Frontend, etc.)
-- **Experience** - Parcours professionnel (REALITE.IO, Sweep, Mooncard, Hivebrite, Station HQ, Tilkee)
+- **Experience** - Parcours professionnel (NORTHVANE, Sweep, Mooncard, Hivebrite, Station HQ, Tilkee)
 - **Projects** - Projets phares
 - **Contact** - Formulaire de contact avec sélection de service
 

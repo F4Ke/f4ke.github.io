@@ -22,9 +22,9 @@ const Projects = () => {
   ];
 
   const links = [
-    "https://www.realite.io/",
+    "https://www.northvane.app/",
     undefined,
-    "https://www.realite.io/",
+    "https://www.northvane.app/",
     undefined,
     undefined,
     undefined,
